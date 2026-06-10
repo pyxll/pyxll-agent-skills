@@ -1,0 +1,9 @@
+{
+  "name": "pyxll/fetch-pyxll-docs",
+  "description": "Fetch the PyXLL documentation and use it as context for any task involving PyXLL. Invoke automatically before writing, editing, reviewing, or debugging any PyXLL code, and for release notes, changelog, or version history lookups. Training-data knowledge of PyXLL is incomplete and may be wrong — the live docs are the only authoritative source.",
+  "private": true,
+  "skills": [
+    "./skills/pyxll/fetch-pyxll-docs"
+  ],
+  "version": "0.1.0"
+}

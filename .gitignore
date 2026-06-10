@@ -23,3 +23,10 @@ Thumbs.db
 
 # Cache
 .cache/
+
+# AI tooling
+.mcp.json
+.tessl/
+.agents/
+.claude/
+.cursor/
