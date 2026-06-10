@@ -1,0 +1,76 @@
+{
+  "instructions": [
+    {
+      "instruction": "Fetch https://www.pyxll.com/llms.txt as the first step to find relevant documentation pages",
+      "original_snippets": "1. Fetch the documentation index to find relevant pages:\n   ```bash\n   curl -s https://www.pyxll.com/llms.txt\n   ```",
+      "relevant_when": "Any task involving PyXLL code, configuration, or troubleshooting",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Read the entire llms.txt output without truncating",
+      "original_snippets": "Read the **entire** output without truncating — the index contains a navigation guide mapping common tasks to sections, followed by page titles, descriptions, and URLs grouped by topic.",
+      "relevant_when": "When fetching the PyXLL documentation index",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Fetch individual pages by their URL using curl after identifying them from the index",
+      "original_snippets": "2. Fetch the individual pages relevant to the task directly by their URL:\n   ```bash\n   curl -s <page-url>\n   ```",
+      "relevant_when": "After fetching the documentation index and identifying relevant pages",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Use the search script (scripts/search-pyxll-docs.sh) when the index does not surface what is needed",
+      "original_snippets": "3. If the index does not surface what you need, use the search script to find pages by keyword.\n   The script is in the `scripts/` folder next to this file. Find this file's location and run:\n   ```bash\n   /path/to/this/skills/fetch-pyxll-docs/scripts/search-pyxll-docs.sh <keyword> [keyword2 ...]\n   ```",
+      "relevant_when": "When searching for less common PyXLL features not easily found in the index",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Locate the search script path dynamically relative to the skill file's location, not by a hardcoded path",
+      "original_snippets": "The script is in the `scripts/` folder next to this file. Find this file's location and run:\n   ```bash\n   /path/to/this/skills/fetch-pyxll-docs/scripts/search-pyxll-docs.sh <keyword> [keyword2 ...]\n   ```",
+      "relevant_when": "When running the search script",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Always fetch PyXLL docs BEFORE writing, modifying, or troubleshooting any PyXLL-specific code or behaviour",
+      "original_snippets": "ALWAYS fetch these docs before writing, modifying, or troubleshooting any PyXLL-specific code or behaviour.",
+      "relevant_when": "Whenever working on any PyXLL task",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Before suggesting a manual workaround for a PyXLL problem, check whether PyXLL already has a built-in solution (decorator parameter, config key, or feature)",
+      "original_snippets": "Before suggesting a manual workaround for a PyXLL problem, check whether PyXLL already has a built-in solution (decorator parameter, config key, or feature).",
+      "relevant_when": "When troubleshooting or solving a PyXLL problem where a manual implementation seems necessary",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Do NOT rely on training-data knowledge alone for PyXLL APIs — the docs are authoritative",
+      "original_snippets": "Do NOT rely on training-data knowledge alone for PyXLL APIs — the docs are authoritative.",
+      "relevant_when": "When writing any PyXLL-related code",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Before writing any code that calls the Excel COM API (Range, Worksheet, Workbook, etc.), fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full",
+      "original_snippets": "Before writing any code that calls the Excel COM API (Range, Worksheet, Workbook, etc.), fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full.",
+      "relevant_when": "When writing Python code that interacts with Excel objects via COM",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "COM properties that take arguments must be called as Get<PropertyName>(args) in Python, not Property(args) as in VBA",
+      "original_snippets": "including how COM properties that take arguments must be called as `Get<PropertyName>(args)` in Python rather than `Property(args)` as in VBA.",
+      "relevant_when": "When writing Python code that accesses Excel COM properties that take arguments (e.g., Range.Value, Cells)",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Only use PyXLL classes, functions, decorators, and configuration settings that are explicitly documented",
+      "original_snippets": "Before using any PyXLL class, function, decorator, or configuration setting (including pyxll.cfg section names and their keys), fetch the relevant documentation and use only what is explicitly documented.",
+      "relevant_when": "When writing any code that uses PyXLL APIs, decorators, or configuration",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Never infer behaviour, key names, or parameter names from conventions or assumptions — if it is not in the docs, do not use it",
+      "original_snippets": "Never infer behaviour, key names, or parameter names from conventions or assumptions — if it is not in the docs, do not use it.",
+      "relevant_when": "When writing any code that uses PyXLL APIs or configuration",
+      "why_given": "reminder"
+    }
+  ]
+}

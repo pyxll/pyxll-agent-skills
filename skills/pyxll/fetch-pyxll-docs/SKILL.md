@@ -17,10 +17,7 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
    curl -s https://www.pyxll.com/llms.txt
    ```
 
-   Read the **entire** output without truncating, piping to `head`, or
-   summarising. The index contains a navigation guide at the top mapping
-   common tasks to sections, followed by page titles, descriptions, and URLs
-   grouped by topic. Truncating it will cause you to miss relevant pages.
+   Read the **entire** output without truncating — the index contains a navigation guide mapping common tasks to sections, followed by page titles, descriptions, and URLs grouped by topic.
 
 2. Fetch the individual pages relevant to the task directly by their URL:
 
@@ -29,8 +26,7 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
    ```
 
 3. If the index does not surface what you need, use the search script to find
-   pages by keyword. The script caches the full docs locally (refreshed every
-   24 h) and returns only matching page URLs — avoiding loading 500 KB into context.
+   pages by keyword.
 
    The script is in the `scripts/` folder next to this file. Find this file's
    location and run:
@@ -39,7 +35,8 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
    /path/to/this/skills/fetch-pyxll-docs/scripts/search-pyxll-docs.sh <keyword> [keyword2 ...]
    ```
 
-   Then fetch the returned page URLs individually using curl.
+   The script outputs a list of matching page URLs (one per line). Fetch each
+   returned URL individually using curl.
 
 ## Rules
 

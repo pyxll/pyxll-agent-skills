@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent follows the doc-first workflow for PyXLL: fetching llms.txt first, reading relevant documentation pages, and using only documented decorator parameters and type annotation syntax when implementing UDFs.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Fetches index first",
+      "description": "docs_consulted.md lists https://www.pyxll.com/llms.txt as a fetched source",
+      "max_score": 8
+    },
+    {
+      "name": "Fetches UDF docs page",
+      "description": "docs_consulted.md lists at least one pyxll.com URL whose title or note relates to user-defined functions, worksheet functions, or xl_func",
+      "max_score": 12
+    },
+    {
+      "name": "Multiple pages fetched",
+      "description": "docs_consulted.md lists 2 or more distinct pyxll.com page URLs",
+      "max_score": 8
+    },
+    {
+      "name": "Documented decorator used",
+      "description": "analytics.py uses a PyXLL-provided decorator to register the functions as Excel worksheet functions — not a hand-rolled registration approach",
+      "max_score": 10
+    },
+    {
+      "name": "No undocumented decorator parameters",
+      "description": "All keyword arguments passed to the PyXLL decorator(s) in analytics.py appear in the fetched documentation — no invented or guessed parameter names",
+      "max_score": 12
+    },
+    {
+      "name": "Correct type annotation syntax",
+      "description": "Any type strings or type annotations passed to the decorator use syntax that matches what is shown in the fetched docs, not guessed from Python conventions",
+      "max_score": 10
+    },
+    {
+      "name": "Array input annotation",
+      "description": "portfolio_vol uses a documented PyXLL array or range type annotation for its range inputs rather than a plain Python list or generic type hint",
+      "max_score": 10
+    },
+    {
+      "name": "Both functions defined",
+      "description": "analytics.py defines both portfolio_vol (accepting array/range inputs and weights) and compound_return (accepting rate and periods)",
+      "max_score": 10
+    },
+    {
+      "name": "Docs log completeness",
+      "description": "docs_consulted.md contains at least 2 entries, each with both a URL and a one-line note",
+      "max_score": 10
+    },
+    {
+      "name": "No training-only claim",
+      "description": "docs_consulted.md does NOT state that no documentation was needed or that implementation was done from memory — evidence of doc lookup is present",
+      "max_score": 10
+    }
+  ]
+}

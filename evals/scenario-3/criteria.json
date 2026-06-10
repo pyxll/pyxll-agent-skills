@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent fetches PyXLL documentation before proposing a fix, discovers PyXLL's built-in mechanism for long-running functions rather than recommending a manual threading workaround, and uses only documented APIs in the rewritten code.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Fetches index first",
+      "description": "research_log.md records that https://www.pyxll.com/llms.txt was fetched",
+      "max_score": 8
+    },
+    {
+      "name": "Fetches async or long-running docs",
+      "description": "research_log.md lists at least one pyxll.com URL whose title or note relates to async functions, long-running functions, or background tasks",
+      "max_score": 12
+    },
+    {
+      "name": "Uses built-in PyXLL async mechanism",
+      "description": "price_fetcher.py uses a PyXLL-native mechanism for async or long-running worksheet functions (e.g. async def with xl_func, or a documented async decorator) rather than raw threading.Thread as the primary concurrency approach",
+      "max_score": 15
+    },
+    {
+      "name": "Async feature named in log",
+      "description": "research_log.md explicitly names the specific PyXLL built-in feature discovered (e.g. the name of the async mechanism or decorator) — evidence that docs were consulted rather than the solution assumed",
+      "max_score": 5
+    },
+    {
+      "name": "No raw threading as primary solution",
+      "description": "price_fetcher.py does NOT use threading.Thread as the main mechanism for keeping Excel responsive — the PyXLL built-in approach is used instead",
+      "max_score": 15
+    },
+    {
+      "name": "Documented decorator parameters only",
+      "description": "price_fetcher.py uses only decorator parameters and function signatures found in the fetched PyXLL documentation — no guessed parameters",
+      "max_score": 15
+    },
+    {
+      "name": "Function retains xl_func decorator",
+      "description": "price_fetcher.py still registers get_live_price (or equivalent) as a PyXLL worksheet function using a documented decorator",
+      "max_score": 10
+    },
+    {
+      "name": "Return type documented",
+      "description": "Any return type annotation used in price_fetcher.py matches a type supported by the PyXLL decorator as shown in the fetched documentation",
+      "max_score": 10
+    },
+    {
+      "name": "Multiple pages fetched",
+      "description": "research_log.md lists 2 or more distinct pyxll.com URLs",
+      "max_score": 5
+    },
+    {
+      "name": "Research log notes present",
+      "description": "research_log.md contains at least 2 entries each with both a URL and a brief note",
+      "max_score": 5
+    }
+  ]
+}

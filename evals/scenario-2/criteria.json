@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent fetches PyXLL documentation before writing configuration, and uses only section names and key names that are explicitly documented — not guessed from INI conventions or assumed from the task description.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Fetches docs index",
+      "description": "config_notes.md records that https://www.pyxll.com/llms.txt was fetched",
+      "max_score": 8
+    },
+    {
+      "name": "Fetches config docs page",
+      "description": "config_notes.md lists at least one pyxll.com URL whose title or note relates to configuration or pyxll.cfg",
+      "max_score": 12
+    },
+    {
+      "name": "Documented section names only",
+      "description": "All section headers in pyxll.cfg (e.g. [PYXLL], [LOG]) use names that appear in the fetched PyXLL documentation — no invented section names",
+      "max_score": 15
+    },
+    {
+      "name": "Documented key names only",
+      "description": "All keys within sections of pyxll.cfg use names that appear in the fetched documentation — no guessed or convention-derived key names",
+      "max_score": 15
+    },
+    {
+      "name": "Modules path configured",
+      "description": "pyxll.cfg contains a documented key that points to ./modules as the location for add-in Python modules",
+      "max_score": 10
+    },
+    {
+      "name": "Log file path configured",
+      "description": "pyxll.cfg contains documented logging key(s) that set the log output path to ./logs/pyxll.log",
+      "max_score": 10
+    },
+    {
+      "name": "Log level configured",
+      "description": "pyxll.cfg sets the log level to INFO using a documented key name",
+      "max_score": 8
+    },
+    {
+      "name": "Python path configured",
+      "description": "pyxll.cfg contains a documented key that adds ./lib to the Python path",
+      "max_score": 10
+    },
+    {
+      "name": "Docs log completeness",
+      "description": "config_notes.md has at least 2 entries, each with both a URL and a note linking it to a specific section or key",
+      "max_score": 7
+    },
+    {
+      "name": "No inferred keys claimed",
+      "description": "config_notes.md does NOT state that any key was guessed, assumed, or inferred from convention",
+      "max_score": 5
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent fetches the PyXLL VBA/COM guide before writing COM API code, applies the correct Get<PropertyName>() call syntax for parameterized COM properties, and uses only documented PyXLL macro APIs.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Fetches VBA guide",
+      "description": "docs_log.md records that https://www.pyxll.com/docs/userguide/vba.md (or a URL containing 'vba') was fetched",
+      "max_score": 15
+    },
+    {
+      "name": "Fetches index first",
+      "description": "docs_log.md records that https://www.pyxll.com/llms.txt was fetched",
+      "max_score": 8
+    },
+    {
+      "name": "Value syntax for cell reads",
+      "description": "summary_macro.py uses .Value or .Value2 to read cell values from a Range or Cell COM object — not .Value() or .GetValue()",
+      "max_score": 15
+    },
+    {
+      "name": "Documented macro decorator",
+      "description": "summary_macro.py uses a documented PyXLL decorator to register the macro (no undocumented or hand-rolled registration)",
+      "max_score": 10
+    },
+    {
+      "name": "Cell access via documented method",
+      "description": "Accessing specific cells (e.g. B2) uses a documented COM method or property — not an inferred shorthand not found in the docs",
+      "max_score": 12
+    },
+    {
+      "name": "No parameterized property assignment in VBA style",
+      "description": "summary_macro.py does NOT assign to parameterized COM properties using VBA-style syntax such as cell.Value(r, c) = x",
+      "max_score": 8
+    },
+    {
+      "name": "Docs log completeness",
+      "description": "docs_log.md contains at least 2 entries, each with both a URL and a brief note",
+      "max_score": 5
+    },
+    {
+      "name": "Multiple pages fetched",
+      "description": "docs_log.md lists 2 or more distinct pyxll.com page URLs",
+      "max_score": 5
+    }
+  ]
+}
