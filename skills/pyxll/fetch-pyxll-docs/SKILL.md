@@ -28,12 +28,13 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
 3. If the index does not surface what you need, use the search script to find
    pages by keyword.
 
-   The script is in the `scripts/` folder next to this file. Find this file's
-   location and run:
+   The search script is located at `scripts/search-pyxll-docs.sh` relative to this skill's base directory.
 
    ```bash
-   /path/to/this/skills/fetch-pyxll-docs/scripts/search-pyxll-docs.sh <keyword> [keyword2 ...]
+   <SKILL_BASE_DIR>/scripts/search-pyxll-docs.sh <keyword> [keyword2 ...]
    ```
+
+   **Important**: Replace <SKILL_BASE_DIR> with the actual base directory path provided when this skill is loaded.
 
    The script outputs a list of matching page URLs (one per line). Fetch each
    returned URL individually using curl.
