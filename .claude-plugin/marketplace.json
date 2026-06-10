@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pyxll",
+  "description": "Agent skills for PyXLL that ensure AI always consults the live documentation — not outdated training data — when writing, configuring, or debugging PyXLL code.",
+  "owner": {
+    "name": "PyXLL",
+    "email": "support@pyxll.com"
+  },
+  "plugins": [
+    {
+      "name": "pyxll",
+      "description": "Automatically fetches the authoritative PyXLL documentation before any PyXLL task, ensuring accurate use of the PyXLL API and configuration.",
+      "source": "./skills/pyxll"
+    }
+  ]
+}
