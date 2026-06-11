@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent uses SpecialCells(Type) to select blank cells rather than reading range values and filtering in Python, passes all required (non-optional) parameters to SpecialCells and RemoveDuplicates, and uses named constants for enum arguments. SpecialCells is the correct COM pattern for bulk cell-type selection; RemoveDuplicates is the correct COM pattern for deduplication.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "SpecialCells used for blanks",
+      "description": "Code calls SpecialCells to identify blank cells rather than reading range values into Python and iterating to find None/empty entries",
+      "max_score": 15
+    },
+    {
+      "name": "SpecialCells called with Type",
+      "description": "Code calls SpecialCells with at least one argument — the required Type parameter is provided (e.g., SpecialCells(c.xlCellTypeBlanks) not SpecialCells())",
+      "max_score": 10
+    },
+    {
+      "name": "SpecialCells Type is a named constant",
+      "description": "The Type argument to SpecialCells uses a win32com.client.constants.xl* named constant (e.g., c.xlCellTypeBlanks) rather than a bare integer",
+      "max_score": 15
+    },
+    {
+      "name": "No Python iteration for blanks",
+      "description": "Code does NOT iterate over range values (e.g. no 'for row in values' or 'for cell in row' pattern) to identify or fill blank cells",
+      "max_score": 10
+    },
+    {
+      "name": "RemoveDuplicates called with Columns",
+      "description": "Code calls RemoveDuplicates with at least one argument — the required Columns parameter is provided, specifying which columns define a duplicate",
+      "max_score": 15
+    },
+    {
+      "name": "Columns covers both key fields",
+      "description": "The Columns argument to RemoveDuplicates includes both column 1 and column 2 (e.g., [1, 2] or (1, 2)), matching the requirement that both fields together define a unique row",
+      "max_score": 15
+    },
+    {
+      "name": "Header constant in RemoveDuplicates",
+      "description": "If the Header argument to RemoveDuplicates is provided, it uses a named constant (e.g., c.xlYes) rather than a bare integer or boolean True/False",
+      "max_score": 10
+    },
+    {
+      "name": "win32com.client.constants imported",
+      "description": "Code imports win32com.client and sets up a constants accessor variable",
+      "max_score": 10
+    }
+  ]
+}

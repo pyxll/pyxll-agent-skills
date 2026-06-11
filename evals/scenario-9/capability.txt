@@ -1,0 +1,1 @@
+Correct API member types from reference docs

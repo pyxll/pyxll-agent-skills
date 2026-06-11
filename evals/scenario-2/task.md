@@ -1,17 +1,14 @@
-# Configure PyXLL for a New Deployment
+# Workbook Summary Macro
 
 ## Problem/Feature Description
 
-A data engineering team is deploying a new PyXLL-based Excel add-in for their reporting platform. They need a `pyxll.cfg` configuration file that satisfies the following requirements:
+An operations team manages an Excel workbook with many named worksheets — one per business unit. A manager wants a quick way to generate a status overview: a sheet called "Summary" that lists every other sheet's name alongside the contents of that sheet's cell B2 (which holds a key metric for each unit).
 
-- Python modules for the add-in are stored in a subdirectory called `./modules` and must be loaded by PyXLL at startup
-- Logging should write to `./logs/pyxll.log` at INFO level
-- The Python import path must include `./lib` so that shared utility packages can be imported
-
-Python 3.11 and PyXLL are already installed. No Python code needs to be written — the configuration file is the only deliverable.
+Write a PyXLL macro that, when triggered from Excel, iterates over all worksheets in the active workbook (skipping any sheet already named "Summary"), reads cell B2 from each sheet, and writes the results to a "Summary" sheet — creating it if it does not already exist. The macro must use Excel's COM object model to access the workbook, worksheets, and cell values.
 
 ## Output Specification
 
 Produce:
-- `pyxll.cfg` — the complete PyXLL configuration file satisfying all three requirements
-- `config_notes.md` — a log of every documentation URL you fetched while writing the configuration, with a one-line note mapping each URL to the specific configuration sections or keys it informed
+- `summary_macro.py` — the Python module containing the macro
+- `docs_log.md` — a log of every PyXLL documentation URL you fetched during this task, with a brief note on what each page covered
+[summary_macro.py](../../../../Users/tony/Downloads/usage-spec/summary_macro.py)[summary_macro.py](../../../../Users/tony/Downloads/usage-spec/summary_macro.py)

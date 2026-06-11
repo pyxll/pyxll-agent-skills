@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent uses pyxll.xl_app() to obtain the Excel Application object when writing PyXLL add-in code, rather than using win32com.client.Dispatch('Excel.Application') which is only appropriate for external scripts running outside Excel.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "xl_app imported from pyxll",
+      "description": "Code imports xl_app from the pyxll package, e.g. 'from pyxll import xl_app' or 'import pyxll' followed by 'pyxll.xl_app'",
+      "max_score": 15
+    },
+    {
+      "name": "xl_app() called in @xl_func",
+      "description": "Inside the worksheet function body, xl_app() is called to get the Application object (not assigned at module level)",
+      "max_score": 15
+    },
+    {
+      "name": "xl_app() called in @xl_menu",
+      "description": "Inside the menu action function body, xl_app() is called to get the Application object",
+      "max_score": 10
+    },
+    {
+      "name": "No Dispatch in PyXLL functions",
+      "description": "Code does NOT use win32com.client.Dispatch('Excel.Application') inside either PyXLL-decorated function",
+      "max_score": 20
+    },
+    {
+      "name": "@xl_func decorator used",
+      "description": "The active-sheet-name function is decorated with @xl_func",
+      "max_score": 10
+    },
+    {
+      "name": "@xl_menu decorator used",
+      "description": "The CSV loader function is decorated with @xl_menu",
+      "max_score": 10
+    },
+    {
+      "name": "xl_app() inside function body",
+      "description": "xl_app() is called inside the function body, not at module level (module-level calls fail when the module is imported outside Excel)",
+      "max_score": 10
+    },
+    {
+      "name": "Active worksheet accessed via app",
+      "description": "Active worksheet is accessed via the app object returned by xl_app(), e.g. app.ActiveSheet or app.ActiveWorkbook.ActiveSheet",
+      "max_score": 5
+    }
+  ]
+}

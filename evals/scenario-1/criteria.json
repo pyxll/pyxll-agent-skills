@@ -1,45 +1,55 @@
 {
-  "context": "Tests whether the agent fetches the PyXLL VBA/COM guide before writing COM API code, applies the correct Get<PropertyName>() call syntax for parameterized COM properties, and uses only documented PyXLL macro APIs.",
+  "context": "Tests whether the agent fetches PyXLL documentation before writing configuration, and uses only section names and key names that are explicitly documented — not guessed from INI conventions or assumed from the task description.",
   "type": "weighted_checklist",
   "checklist": [
     {
-      "name": "Fetches VBA guide",
-      "description": "docs_log.md records that https://www.pyxll.com/docs/userguide/vba.md (or a URL containing 'vba') was fetched",
-      "max_score": 15
-    },
-    {
-      "name": "Fetches index first",
-      "description": "docs_log.md records that https://www.pyxll.com/llms.txt was fetched",
+      "name": "Fetches docs index",
+      "description": "config_notes.md records that https://www.pyxll.com/llms.txt was fetched",
       "max_score": 8
     },
     {
-      "name": "Value syntax for cell reads",
-      "description": "summary_macro.py uses .Value or .Value2 to read cell values from a Range or Cell COM object — not .Value() or .GetValue()",
-      "max_score": 15
-    },
-    {
-      "name": "Documented macro decorator",
-      "description": "summary_macro.py uses a documented PyXLL decorator to register the macro (no undocumented or hand-rolled registration)",
-      "max_score": 10
-    },
-    {
-      "name": "Cell access via documented method",
-      "description": "Accessing specific cells (e.g. B2) uses a documented COM method or property — not an inferred shorthand not found in the docs",
+      "name": "Fetches config docs page",
+      "description": "config_notes.md lists at least one pyxll.com URL whose title or note relates to configuration or pyxll.cfg",
       "max_score": 12
     },
     {
-      "name": "No parameterized property assignment in VBA style",
-      "description": "summary_macro.py does NOT assign to parameterized COM properties using VBA-style syntax such as cell.Value(r, c) = x",
+      "name": "Documented section names only",
+      "description": "All section headers in pyxll.cfg (e.g. [PYXLL], [LOG]) use names that appear in the fetched PyXLL documentation — no invented section names",
+      "max_score": 15
+    },
+    {
+      "name": "Documented key names only",
+      "description": "All keys within sections of pyxll.cfg use names that appear in the fetched documentation — no guessed or convention-derived key names",
+      "max_score": 15
+    },
+    {
+      "name": "Modules path configured",
+      "description": "pyxll.cfg contains a documented key that points to ./modules as the location for add-in Python modules",
+      "max_score": 10
+    },
+    {
+      "name": "Log file path configured",
+      "description": "pyxll.cfg contains documented logging key(s) that set the log output path to ./logs/pyxll.log",
+      "max_score": 10
+    },
+    {
+      "name": "Log level configured",
+      "description": "pyxll.cfg sets the log level to INFO using a documented key name",
       "max_score": 8
     },
     {
-      "name": "Docs log completeness",
-      "description": "docs_log.md contains at least 2 entries, each with both a URL and a brief note",
-      "max_score": 5
+      "name": "Python path configured",
+      "description": "pyxll.cfg contains a documented key that adds ./lib to the Python path",
+      "max_score": 10
     },
     {
-      "name": "Multiple pages fetched",
-      "description": "docs_log.md lists 2 or more distinct pyxll.com page URLs",
+      "name": "Docs log completeness",
+      "description": "config_notes.md has at least 2 entries, each with both a URL and a note linking it to a specific section or key",
+      "max_score": 7
+    },
+    {
+      "name": "No inferred keys claimed",
+      "description": "config_notes.md does NOT state that any key was guessed, assumed, or inferred from convention",
       "max_score": 5
     }
   ]

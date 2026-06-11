@@ -46,11 +46,14 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
   PyXLL problem, check whether PyXLL already has a built-in solution (decorator
   parameter, config key, or feature).
 - Do NOT rely on training-data knowledge alone for PyXLL APIs — the docs are authoritative.
-- Before writing any code that calls the Excel COM API (Range, Worksheet, Workbook, etc.),
-  fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full. It documents
-  critical differences between VBA and Python — including how COM properties that take
-  arguments must be called as `Get<PropertyName>(args)` in Python rather than
-  `Property(args)` as in VBA.
+- Before writing any code that calls the Excel COM API (Range, Worksheet, Workbook, etc.):
+  - Fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full. It documents
+    critical differences between VBA and Python — including how COM properties that take
+    arguments must be called as `Get<PropertyName>(args)` in Python rather than
+    `Property(args)` as in VBA.
+  - Consult the **pywin32-excel-docs** skill for method signatures, property types, property
+    accessors, and enum constants. Its `resources/` directory is the authoritative reference
+    for all Excel COM classes — do not rely on training data for COM API details.
 - Before using any PyXLL class, function, decorator, or configuration setting
   (including pyxll.cfg section names and their keys), fetch the relevant documentation
   and use only what is explicitly documented. Never infer behaviour, key names, or

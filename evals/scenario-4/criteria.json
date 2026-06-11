@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent uses win32com.client.constants named constants for all Excel enum values rather than hard-coding bare integers. An agent without the skill may write literal values like -4108 for xlCenter or 51 for xlOpenXMLWorkbook, which may differ across Excel versions and are error-prone.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "xlCenter via constants",
+      "description": "Code uses a named constant for horizontal center alignment, e.g. c.xlCenter or win32com.client.constants.xlCenter — not the bare integer -4108",
+      "max_score": 15
+    },
+    {
+      "name": "No bare -4108 for alignment",
+      "description": "Code does NOT contain the integer literal -4108 as the alignment value",
+      "max_score": 10
+    },
+    {
+      "name": "Border line style via constants",
+      "description": "Code uses a named constant for the border line style, e.g. c.xlContinuous or win32com.client.constants.xlContinuous — not a bare integer",
+      "max_score": 12
+    },
+    {
+      "name": "No bare integer for xlContinuous",
+      "description": "Code does NOT use the bare integer 1 as the LineStyle value for the continuous border (or any other unlabelled integer for border style)",
+      "max_score": 8
+    },
+    {
+      "name": "xlOpenXMLWorkbook via constants",
+      "description": "Code uses a named constant for the xlsx file format in SaveAs, e.g. c.xlOpenXMLWorkbook or win32com.client.constants.xlOpenXMLWorkbook — not a bare integer",
+      "max_score": 15
+    },
+    {
+      "name": "No bare 51 for file format",
+      "description": "Code does NOT contain the integer literal 51 as the FileFormat argument to SaveAs",
+      "max_score": 10
+    },
+    {
+      "name": "Border weight via constants",
+      "description": "Code uses a named constant for the border weight (e.g. c.xlThin, c.xlMedium) rather than a bare integer",
+      "max_score": 10
+    },
+    {
+      "name": "win32com.client imported",
+      "description": "Code imports win32com.client at the top of the script",
+      "max_score": 5
+    },
+    {
+      "name": "Constants accessor created",
+      "description": "Code creates a named reference to the constants object, e.g. c = win32com.client.constants, for use throughout the script",
+      "max_score": 10
+    },
+    {
+      "name": "No other bare xl enum integers",
+      "description": "Code does not use other bare negative integers as Excel enum values (e.g., -4108, -4107, -4131 etc.) anywhere in the script",
+      "max_score": 5
+    }
+  ]
+}

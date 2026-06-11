@@ -1,1 +1,1 @@
-Only documented config keys
+VBA guide fetch and COM syntax

@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent uses parameterized Range property accessors as method calls (GetOffset, GetResize, GetAddress, End) rather than treating them as plain Python attributes. An agent that applies VBA patterns or guesses at the API will use rng.Offset(1,0), rng.Resize(r,c), rng.Address(True,True), etc., which fail at runtime via pywin32.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "End() as method",
+      "description": "Code calls End with an argument as a method call, e.g. cell.End(direction) or cell.End(c.xlDown) — not accessing .End as a plain attribute with no call",
+      "max_score": 12
+    },
+    {
+      "name": "XlDirection constant in End()",
+      "description": "The argument passed to End() is a named win32com.client.constants value (e.g., c.xlDown, c.xlUp) rather than a bare integer",
+      "max_score": 8
+    },
+    {
+      "name": "GetOffset() for offset navigation",
+      "description": "Code uses GetOffset(row, col) method call (e.g., rng.GetOffset(1, 1)) to navigate relative to a cell",
+      "max_score": 15
+    },
+    {
+      "name": "No .Offset(r,c) attribute call",
+      "description": "Code does NOT use .Offset(row, col) as a parameterized call directly on the Range (which would call the property object, not move the range)",
+      "max_score": 10
+    },
+    {
+      "name": "GetResize() for range sizing",
+      "description": "Code uses GetResize(rows, cols) method call (e.g., rng.GetResize(n, 5)) to build a multi-column range",
+      "max_score": 15
+    },
+    {
+      "name": "No .Resize(r,c) attribute call",
+      "description": "Code does NOT use .Resize(rows, cols) as a direct parameterized call on the Range object",
+      "max_score": 10
+    },
+    {
+      "name": "GetAddress() for address string",
+      "description": "Code uses GetAddress(RowAbsolute, ColumnAbsolute, ...) as a method call with at least two boolean arguments to get the address string",
+      "max_score": 15
+    },
+    {
+      "name": "No .Address(True,True) call",
+      "description": "Code does NOT use .Address(True, True) or .Address(row_abs, col_abs) as a parameterized attribute call",
+      "max_score": 5
+    },
+    {
+      "name": "External script uses Dispatch",
+      "description": "Code uses win32com.client.Dispatch('Excel.Application') to obtain the Application object (appropriate for a standalone command-line script, not xl_app())",
+      "max_score": 5
+    },
+    {
+      "name": "win32com.client imported",
+      "description": "Code imports win32com.client at the top of the script",
+      "max_score": 5
+    }
+  ]
+}

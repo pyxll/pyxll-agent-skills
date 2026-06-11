@@ -8,9 +8,14 @@
   },
   "plugins": [
     {
-      "name": "pyxll",
+      "name": "fetch-pyxll-docs",
       "description": "Automatically fetches the authoritative PyXLL documentation before any PyXLL task, ensuring accurate use of the PyXLL API and configuration.",
-      "source": "./skills/pyxll"
+      "source": "./skills/fetch-pyxll-docs"
+    },
+    {
+      "name": "pywin32-excel-docs",
+      "description": "Reference for the Microsoft Excel COM API via pywin32.",
+      "source": "./skills/pywin32-excel-docs"
     }
   ]
 }

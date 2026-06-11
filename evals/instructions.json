@@ -71,6 +71,60 @@
       "original_snippets": "Never infer behaviour, key names, or parameter names from conventions or assumptions — if it is not in the docs, do not use it.",
       "relevant_when": "When writing any code that uses PyXLL APIs or configuration",
       "why_given": "reminder"
+    },
+    {
+      "instruction": "Always read the relevant reference file before using any Excel COM class; do not rely on training-data knowledge of the Excel COM API",
+      "original_snippets": "Always read the relevant reference file before using any Excel COM class. Do not rely on training-data knowledge of the Excel COM API — method signatures, parameter names, and property types must be verified from the resources/ docs. The API is large and easy to misremember.",
+      "relevant_when": "Any time an agent writes or reviews Python code that uses Excel COM objects via pywin32",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Before using any class, look it up in resources/index.md to find which file covers it, then read its section — checking which members are properties vs methods vs property accessors",
+      "original_snippets": "Before using any class, look it up in resources/index.md to find which file covers it, then read its section in that file. At minimum, check: which members are properties vs methods vs property accessors, and what the parameter names and types are.",
+      "relevant_when": "When writing code that uses any Excel COM object, especially unfamiliar or less-common classes",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Never guess a method or property name; if not found in the docs, say so rather than inventing one",
+      "original_snippets": "Never guess a method or property name. If you cannot find a member in the docs, say so rather than inventing one. COM errors from wrong names surface only at runtime.",
+      "relevant_when": "When writing code that uses Excel COM methods or properties whose exact names are uncertain",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Property accessors (GetX / SetX) must be called as methods with arguments, not accessed as plain attributes",
+      "original_snippets": "Property accessors (GetX / SetX) must be called as methods, not accessed as attributes. They appear under 'Property Accessors' in the docs. Example: rng.GetOffset(1, 0) — NOT rng.Offset.",
+      "relevant_when": "When writing code that uses parameterized properties on Range or other COM objects — e.g., Offset, Resize, Address, End, Value with a type argument, Characters with start/length",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Always use win32com.client.constants.<name> for enum/constant values; never use bare integer literals for constants",
+      "original_snippets": "Always use win32com.client.constants.<name> for enum/constant values. Never use bare integer literals for constants unless the integer value is explicitly confirmed from resources/enums_xl.md. The constant name (e.g. xlCenter) is the authoritative identifier; its integer value can change across Excel versions.",
+      "relevant_when": "When passing enumeration values to Excel COM API calls — file formats, alignment constants, border styles, chart types, sort orders, cell types, etc.",
+      "why_given": "preference"
+    },
+    {
+      "instruction": "Use pyxll.xl_app() to get the Application object when running inside Excel via PyXLL; use win32com.client.Dispatch('Excel.Application') only in external scripts",
+      "original_snippets": "Use pyxll.xl_app() to get the Application object when running inside Excel via PyXLL. Only use win32com.client.Dispatch('Excel.Application') in external scripts.",
+      "relevant_when": "When writing Python code that will run as a PyXLL add-in function, menu callback, or macro inside Excel",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Parameters marked ? are optional; never omit required parameters (those with no ? suffix)",
+      "original_snippets": "Parameters marked ? are optional. Required parameters have no ? suffix. Do not omit required parameters.",
+      "relevant_when": "When calling any Excel COM method that has a mix of required and optional parameters",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Always check resources/index.md to locate any class — it lists every class and the file that documents it",
+      "original_snippets": "Always check resources/index.md to locate any class — it lists every class and the file that documents it.",
+      "relevant_when": "When working with any Excel COM class, especially less-common collection or helper classes",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "When operating on cells by category (blanks, formulas, constants, errors), use SpecialCells(Type) rather than reading the full range value and filtering in Python",
+      "original_snippets": "When operating on cells by category (blanks, formulas, constants, errors, etc.), use SpecialCells(Type) to select them rather than reading the full range value and filtering in Python. Example: rng.SpecialCells(c.xlCellTypeBlanks) selects all blank cells in one call. Python iteration over range values is slower and bypasses the COM object model.",
+      "relevant_when": "When writing code that needs to find or operate on cells matching a type criterion — blank cells, cells with formulas, cells with constants, cells with errors",
+      "why_given": "preference"
     }
   ]
 }

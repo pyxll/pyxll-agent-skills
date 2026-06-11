@@ -1,0 +1,46 @@
+{
+  "context": "Tests that the agent consults both the fetch-pyxll-docs skill (for @xl_macro and xl_app) and the pywin32-excel-docs skill (for GetOffset as a method call), and that the resulting code reflects both correctly. The docs_consulted.md makes skill usage observable to the grader.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "PyXLL docs fetched",
+      "description": "docs_consulted.md references a URL at pyxll.com (showing fetch-pyxll-docs was invoked — e.g. https://www.pyxll.com/llms.txt or a specific docs page)",
+      "max_score": 12
+    },
+    {
+      "name": "PyXLL page content used",
+      "description": "docs_consulted.md lists at least one specific pyxll.com page that was fetched (not just the index), indicating the agent read actual PyXLL documentation",
+      "max_score": 8
+    },
+    {
+      "name": "pywin32 reference consulted",
+      "description": "docs_consulted.md references a file from the pywin32-excel-docs resources/ directory (e.g. resources/range.md or resources/index.md)",
+      "max_score": 10
+    },
+    {
+      "name": "@xl_macro decorator",
+      "description": "The macro function in set_below.py is decorated with @xl_macro (not @xl_func, @xl_menu, or a plain function)",
+      "max_score": 20
+    },
+    {
+      "name": "xl_app() for Application object",
+      "description": "set_below.py calls xl_app() inside the function body to obtain the Excel Application object",
+      "max_score": 15
+    },
+    {
+      "name": "No Dispatch for Application",
+      "description": "set_below.py does NOT use win32com.client.Dispatch('Excel.Application') to obtain the Application object",
+      "max_score": 5
+    },
+    {
+      "name": "GetOffset() as method call",
+      "description": "set_below.py uses GetOffset(1, 0) (or equivalent row/column arguments) as a method call to navigate one row below the active cell",
+      "max_score": 20
+    },
+    {
+      "name": "No .Offset as parameterized call",
+      "description": "set_below.py does NOT call .Offset(1, 0) or .Offset(row, col) directly on the Range object as a parameterized attribute call",
+      "max_score": 10
+    }
+  ]
+}

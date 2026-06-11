@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent uses resources/index.md as the entry point to locate the correct reference file before writing COM code, and then reads the file that covers the class it needs. The files_read.md output makes the lookup workflow directly observable.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "resources/index.md listed",
+      "description": "files_read.md contains the line 'resources/index.md', showing it was used to locate which file documents the Validation class",
+      "max_score": 30
+    },
+    {
+      "name": "Correct reference file listed",
+      "description": "files_read.md contains 'resources/range.md', the file that documents the Validation class (as indexed in resources/index.md)",
+      "max_score": 20
+    },
+    {
+      "name": "index.md read before range.md",
+      "description": "In files_read.md, resources/index.md appears before resources/range.md, showing it was consulted first to locate the class",
+      "max_score": 10
+    },
+    {
+      "name": "Validation accessed as property",
+      "description": "Code accesses .Validation on the Range object as a plain attribute (e.g. rng.Validation), not as a method call rng.Validation()",
+      "max_score": 15
+    },
+    {
+      "name": "Constants for validation type/operator",
+      "description": "Code uses win32com.client.constants.xl* named constants for the validation type and operator arguments (e.g. c.xlValidateWholeNumber, c.xlBetween) rather than bare integers",
+      "max_score": 15
+    },
+    {
+      "name": "Constants for alert style",
+      "description": "Code uses a win32com.client.constants.xl* named constant for the alert style argument (e.g. c.xlValidAlertWarning) rather than a bare integer",
+      "max_score": 10
+    }
+  ]
+}

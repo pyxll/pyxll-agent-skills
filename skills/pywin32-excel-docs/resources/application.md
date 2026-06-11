@@ -1,0 +1,964 @@
+# Application
+
+## AutoRecover
+
+**Properties:**
+- `Application: Application`
+- `Creator: XlCreator`
+- `Enabled: Any`
+- `Parent: Any`
+- `Path: Any`
+- `Time: Any`
+
+## DefaultWebOptions
+
+**Properties:**
+- `AllowPNG: Any`
+- `AlwaysSaveInDefaultEncoding: Any`
+- `Application: Application`
+- `CheckIfOfficeIsHTMLEditor: Any`
+- `Creator: XlCreator`
+- `DownloadComponents: Any`
+- `Encoding: MsoEncoding`
+- `FolderSuffix: Any`
+- `Fonts: WebPageFonts`
+- `LoadPictures: Any`
+- `LocationOfComponents: Any`
+- `OrganizeInFolder: Any`
+- `Parent: Any`
+- `PixelsPerInch: Any`
+- `RelyOnCSS: Any`
+- `RelyOnVML: Any`
+- `SaveHiddenData: Any`
+- `SaveNewWebPagesAsWebArchives: Any`
+- `ScreenSize: MsoScreenSize`
+- `TargetBrowser: MsoTargetBrowser`
+- `UpdateLinksOnSave: Any`
+- `UseLongFileNames: Any`
+
+## ErrorCheckingOptions
+
+**Properties:**
+- `Application: Application`
+- `BackgroundChecking: Any`
+- `Creator: XlCreator`
+- `EmptyCellReferences: Any`
+- `EvaluateToError: Any`
+- `InconsistentFormula: Any`
+- `InconsistentTableFormula: Any`
+- `IndicatorColorIndex: XlColorIndex`
+- `ListDataValidation: Any`
+- `MisleadingNumberFormats: Any`
+- `NumberAsText: Any`
+- `OmittedCells: Any`
+- `OutdatedLinkedDataType: Any`
+- `Parent: Any`
+- `TextDate: Any`
+- `UnlockedFormulaCells: Any`
+
+## MultiThreadedCalculation
+
+**Properties:**
+- `Application: Application`
+- `Creator: XlCreator`
+- `Enabled: Any`
+- `Parent: Any`
+- `ThreadCount: Any`
+- `ThreadMode: XlThreadMode`
+
+## Research
+
+**Properties:**
+- `Application: Application`
+- `Creator: XlCreator`
+- `Parent: Any`
+
+**Methods:**
+- `IsResearchService(ServiceID: str) -> bool`
+- `Query(ServiceID: str, QueryString?, QueryLanguage?, UseSelection?, LaunchQuery?) -> Any`
+- `SetLanguagePair(LanguageFrom: int, LanguageTo: int) -> Any`
+
+## Speech
+
+**Properties:**
+- `Direction: XlSpeakDirection`
+- `SpeakCellOnEnter: Any`
+
+**Methods:**
+- `Speak(Text: str, SpeakAsync?, SpeakXML?, Purge?) -> None`
+
+## SpellingOptions
+
+**Properties:**
+- `ArabicModes: XlArabicModes`
+- `ArabicStrictAlefHamza: Any`
+- `ArabicStrictFinalYaa: Any`
+- `ArabicStrictTaaMarboota: Any`
+- `BrazilReform: XlPortugueseReform`
+- `DictLang: Any`
+- `GermanPostReform: Any`
+- `HebrewModes: XlHebrewModes`
+- `IgnoreCaps: Any`
+- `IgnoreFileNames: Any`
+- `IgnoreMixedDigits: Any`
+- `KoreanCombineAux: Any`
+- `KoreanProcessCompound: Any`
+- `KoreanUseAutoChangeList: Any`
+- `PortugalReform: XlPortugueseReform`
+- `RussianStrictE: Any`
+- `SpanishModes: XlSpanishModes`
+- `SuggestMainOnly: Any`
+- `UserDict: Any`
+
+## UsedObjects
+
+**Properties:**
+- `Application: Application`
+- `Count: Any`
+- `Creator: XlCreator`
+- `Parent: Any`
+
+**Methods:**
+- `__call__(Index) -> Dispatch`
+- `__getitem__(key) -> Any`
+- `__len__() -> Any`
+- `__nonzero__() -> Any`
+
+**Property Accessors** *(parameterized — must be called as method):*
+- `_Default(Index) -> Dispatch`
+- `Item(Index) -> Dispatch`
+
+## WebOptions
+
+**Properties:**
+- `AllowPNG: Any`
+- `Application: Application`
+- `Creator: XlCreator`
+- `DownloadComponents: Any`
+- `Encoding: MsoEncoding`
+- `FolderSuffix: Any`
+- `LocationOfComponents: Any`
+- `OrganizeInFolder: Any`
+- `Parent: Any`
+- `PixelsPerInch: Any`
+- `RelyOnCSS: Any`
+- `RelyOnVML: Any`
+- `ScreenSize: MsoScreenSize`
+- `TargetBrowser: MsoTargetBrowser`
+- `UseLongFileNames: Any`
+
+**Methods:**
+- `UseDefaultFolderSuffix() -> None`
+
+## WorksheetFunction
+
+**Properties:**
+- `Application: Application`
+- `Creator: XlCreator`
+- `Parent: Any`
+
+**Methods:**
+- `__len__(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `__nonzero__() -> Any`
+- `_WSFunction(Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `AccrInt(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7?) -> float`
+- `AccrIntM(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `Acos(Arg1: float) -> float`
+- `Acosh(Arg1: float) -> float`
+- `Acot(Arg1: float) -> float`
+- `Acoth(Arg1: float) -> float`
+- `Aggregate(Arg1: float, Arg2: float, Arg3: Range, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `AmorDegrc(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7?) -> float`
+- `AmorLinc(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7?) -> float`
+- `And(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> bool`
+- `Arabic(Arg1: str) -> float`
+- `Asc(Arg1: str) -> str`
+- `Asin(Arg1: float) -> float`
+- `Asinh(Arg1: float) -> float`
+- `Atan2(Arg1: float, Arg2: float) -> float`
+- `Atanh(Arg1: float) -> float`
+- `AveDev(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Average(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `AverageIf(Arg1: Range, Arg2, Arg3?) -> float`
+- `AverageIfs(Arg1: Range, Arg2: Range, Arg3, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> float`
+- `BahtText(Arg1: float) -> str`
+- `Base(Arg1: float, Arg2: float, Arg3?) -> str`
+- `BesselI(Arg1, Arg2) -> float`
+- `BesselJ(Arg1, Arg2) -> float`
+- `BesselK(Arg1, Arg2) -> float`
+- `BesselY(Arg1, Arg2) -> float`
+- `Beta_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool, Arg5?, Arg6?) -> float`
+- `Beta_Inv(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `BetaDist(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `BetaInv(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `Bin2Dec(Arg1) -> str`
+- `Bin2Hex(Arg1, Arg2?) -> str`
+- `Bin2Oct(Arg1, Arg2?) -> str`
+- `Binom_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `Binom_Dist_Range(Arg1: float, Arg2: float, Arg3: float, Arg4?) -> float`
+- `Binom_Inv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `BinomDist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `Bitand(Arg1: float, Arg2: float) -> float`
+- `Bitlshift(Arg1: float, Arg2: float) -> float`
+- `Bitor(Arg1: float, Arg2: float) -> float`
+- `Bitrshift(Arg1: float, Arg2: float) -> float`
+- `Bitxor(Arg1: float, Arg2: float) -> float`
+- `Ceiling(Arg1: float, Arg2: float) -> float`
+- `Ceiling_Math(Arg1: float, Arg2?, Arg3?) -> float`
+- `Ceiling_Precise(Arg1: float, Arg2?) -> float`
+- `ChiDist(Arg1: float, Arg2: float) -> float`
+- `ChiInv(Arg1: float, Arg2: float) -> float`
+- `ChiSq_Dist(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `ChiSq_Dist_RT(Arg1: float, Arg2: float) -> float`
+- `ChiSq_Inv(Arg1: float, Arg2: float) -> float`
+- `ChiSq_Inv_RT(Arg1: float, Arg2: float) -> float`
+- `ChiSq_Test(Arg1, Arg2) -> float`
+- `ChiTest(Arg1, Arg2) -> float`
+- `Choose(Arg1, Arg2, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `Clean(Arg1: str) -> str`
+- `Combin(Arg1: float, Arg2: float) -> float`
+- `Combina(Arg1: float, Arg2: float) -> float`
+- `Complex(Arg1, Arg2, Arg3?) -> str`
+- `Concat(Arg1: str, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> str`
+- `Confidence(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Confidence_Norm(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Confidence_T(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Convert(Arg1, Arg2, Arg3) -> float`
+- `Correl(Arg1, Arg2) -> float`
+- `Cosh(Arg1: float) -> float`
+- `Cot(Arg1: float) -> float`
+- `Coth(Arg1: float) -> float`
+- `Count(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `CountA(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `CountBlank(Arg1: Range) -> float`
+- `CountIf(Arg1: Range, Arg2) -> float`
+- `CountIfs(Arg1: Range, Arg2, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `CoupDayBs(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `CoupDays(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `CoupDaysNc(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `CoupNcd(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `CoupNum(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `CoupPcd(Arg1, Arg2, Arg3, Arg4?) -> float`
+- `Covar(Arg1, Arg2) -> float`
+- `Covariance_P(Arg1, Arg2) -> float`
+- `Covariance_S(Arg1, Arg2) -> float`
+- `CritBinom(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Csc(Arg1: float) -> float`
+- `Csch(Arg1: float) -> float`
+- `CumIPmt(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> float`
+- `CumPrinc(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> float`
+- `DAverage(Arg1: Range, Arg2, Arg3) -> float`
+- `Days(Arg1, Arg2) -> float`
+- `Days360(Arg1, Arg2, Arg3?) -> float`
+- `Db(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5?) -> float`
+- `Dbcs(Arg1: str) -> str`
+- `DCount(Arg1: Range, Arg2, Arg3) -> float`
+- `DCountA(Arg1: Range, Arg2, Arg3) -> float`
+- `Ddb(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5?) -> float`
+- `Dec2Bin(Arg1, Arg2?) -> str`
+- `Dec2Hex(Arg1, Arg2?) -> str`
+- `Dec2Oct(Arg1, Arg2?) -> str`
+- `Decimal(Arg1: str, Arg2: float) -> float`
+- `Degrees(Arg1: float) -> float`
+- `Delta(Arg1, Arg2?) -> float`
+- `DevSq(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `DGet(Arg1: Range, Arg2, Arg3) -> Any`
+- `Disc(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `DMax(Arg1: Range, Arg2, Arg3) -> float`
+- `DMin(Arg1: Range, Arg2, Arg3) -> float`
+- `Dollar(Arg1: float, Arg2?) -> str`
+- `DollarDe(Arg1, Arg2) -> float`
+- `DollarFr(Arg1, Arg2) -> float`
+- `DProduct(Arg1: Range, Arg2, Arg3) -> float`
+- `DStDev(Arg1: Range, Arg2, Arg3) -> float`
+- `DStDevP(Arg1: Range, Arg2, Arg3) -> float`
+- `DSum(Arg1: Range, Arg2, Arg3) -> float`
+- `Duration(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6?) -> float`
+- `DVar(Arg1: Range, Arg2, Arg3) -> float`
+- `DVarP(Arg1: Range, Arg2, Arg3) -> float`
+- `EDate(Arg1, Arg2) -> float`
+- `Effect(Arg1, Arg2) -> float`
+- `EncodeURL(Arg1: str) -> Any`
+- `EoMonth(Arg1, Arg2) -> float`
+- `Erf(Arg1, Arg2?) -> float`
+- `Erf_Precise(Arg1) -> float`
+- `ErfC(Arg1) -> float`
+- `ErfC_Precise(Arg1) -> float`
+- `Even(Arg1: float) -> float`
+- `Expon_Dist(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `ExponDist(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `F_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `F_Dist_RT(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `F_Inv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `F_Inv_RT(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `F_Test(Arg1, Arg2) -> float`
+- `Fact(Arg1: float) -> float`
+- `FactDouble(Arg1) -> float`
+- `FDist(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `FieldValue(Arg1, Arg2: str) -> Any`
+- `Filter(Arg1, Arg2, Arg3?) -> Any`
+- `FilterXML(Arg1: str, Arg2: str) -> Any`
+- `Find(Arg1: str, Arg2: str, Arg3?) -> float`
+- `FindB(Arg1: str, Arg2: str, Arg3?) -> float`
+- `FInv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Fisher(Arg1: float) -> float`
+- `FisherInv(Arg1: float) -> float`
+- `Fixed(Arg1: float, Arg2?, Arg3?) -> str`
+- `Floor(Arg1: float, Arg2: float) -> float`
+- `Floor_Math(Arg1: float, Arg2?, Arg3?) -> float`
+- `Floor_Precise(Arg1: float, Arg2?) -> float`
+- `Forecast(Arg1: float, Arg2, Arg3) -> float`
+- `Forecast_ETS(Arg1: float, Arg2, Arg3, Arg4?, Arg5?, Arg6?) -> float`
+- `Forecast_ETS_ConfInt(Arg1: float, Arg2, Arg3, Arg4?, Arg5?, Arg6?, Arg7?) -> float`
+- `Forecast_ETS_Seasonality(Arg1, Arg2, Arg3?, Arg4?) -> float`
+- `Forecast_ETS_STAT(Arg1, Arg2, Arg3: float, Arg4?, Arg5?, Arg6?) -> float`
+- `Forecast_Linear(Arg1: float, Arg2, Arg3) -> float`
+- `Frequency(Arg1, Arg2) -> Any`
+- `FTest(Arg1, Arg2) -> float`
+- `Fv(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `FVSchedule(Arg1, Arg2) -> float`
+- `Gamma(Arg1: float) -> float`
+- `Gamma_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `Gamma_Inv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `GammaDist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `GammaInv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `GammaLn(Arg1: float) -> float`
+- `GammaLn_Precise(Arg1: float) -> float`
+- `Gauss(Arg1: float) -> float`
+- `Gcd(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `GeoMean(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `GeStep(Arg1, Arg2?) -> float`
+- `Growth(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `HarMean(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Hex2Bin(Arg1, Arg2?) -> str`
+- `Hex2Dec(Arg1) -> str`
+- `Hex2Oct(Arg1, Arg2?) -> str`
+- `HLookup(Arg1, Arg2, Arg3, Arg4?) -> Any`
+- `HypGeom_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5: bool) -> float`
+- `HypGeomDist(Arg1: float, Arg2: float, Arg3: float, Arg4: float) -> float`
+- `IfError(Arg1, Arg2) -> Any`
+- `IfNa(Arg1, Arg2) -> Any`
+- `ImAbs(Arg1) -> str`
+- `Imaginary(Arg1) -> float`
+- `ImArgument(Arg1) -> str`
+- `ImConjugate(Arg1) -> str`
+- `ImCos(Arg1) -> str`
+- `ImCosh(Arg1) -> str`
+- `ImCot(Arg1) -> str`
+- `ImCsc(Arg1) -> str`
+- `ImCsch(Arg1) -> str`
+- `ImDiv(Arg1, Arg2) -> str`
+- `ImExp(Arg1) -> str`
+- `ImLn(Arg1) -> str`
+- `ImLog10(Arg1) -> str`
+- `ImLog2(Arg1) -> str`
+- `ImPower(Arg1, Arg2) -> str`
+- `ImProduct(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> str`
+- `ImReal(Arg1) -> float`
+- `ImSec(Arg1) -> str`
+- `ImSech(Arg1) -> str`
+- `ImSin(Arg1) -> str`
+- `ImSinh(Arg1) -> str`
+- `ImSqrt(Arg1) -> str`
+- `ImSub(Arg1, Arg2) -> str`
+- `ImSum(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> str`
+- `ImTan(Arg1) -> str`
+- `Index(Arg1, Arg2: float, Arg3?, Arg4?) -> Any`
+- `Intercept(Arg1, Arg2) -> float`
+- `IntRate(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `Ipmt(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5?, Arg6?) -> float`
+- `Irr(Arg1, Arg2?) -> float`
+- `IsErr(Arg1) -> bool`
+- `IsError(Arg1) -> bool`
+- `IsEven(Arg1) -> bool`
+- `IsFormula(Arg1: Range) -> bool`
+- `IsLogical(Arg1) -> bool`
+- `IsNA(Arg1) -> bool`
+- `IsNonText(Arg1) -> bool`
+- `IsNumber(Arg1) -> bool`
+- `ISO_Ceiling(Arg1: float, Arg2?) -> float`
+- `IsOdd(Arg1) -> bool`
+- `IsoWeekNum(Arg1: float, Arg2?) -> float`
+- `Ispmt(Arg1: float, Arg2: float, Arg3: float, Arg4: float) -> float`
+- `IsText(Arg1) -> bool`
+- `IsThaiDigit(Arg1: str) -> bool`
+- `Kurt(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Large(Arg1, Arg2: float) -> float`
+- `Lcm(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `LinEst(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `Ln(Arg1: float) -> float`
+- `Log(Arg1: float, Arg2?) -> float`
+- `Log10(Arg1: float) -> float`
+- `LogEst(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `LogInv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `LogNorm_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `LogNorm_Inv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `LogNormDist(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Lookup(Arg1, Arg2, Arg3?) -> Any`
+- `Match(Arg1, Arg2, Arg3?) -> float`
+- `Max(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `MaxIfs(Arg1: Range, Arg2: Range, Arg3, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> float`
+- `MDeterm(Arg1) -> float`
+- `MDuration(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6?) -> float`
+- `Median(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Min(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `MinIfs(Arg1: Range, Arg2: Range, Arg3, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> float`
+- `MInverse(Arg1) -> Any`
+- `MIrr(Arg1, Arg2: float, Arg3: float) -> float`
+- `MMult(Arg1, Arg2) -> Any`
+- `Mode(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Mode_Mult(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `Mode_Sngl(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `MRound(Arg1, Arg2) -> float`
+- `MultiNomial(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Munit(Arg1: float) -> Any`
+- `NegBinom_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `NegBinomDist(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `NetworkDays(Arg1, Arg2, Arg3?) -> float`
+- `NetworkDays_Intl(Arg1, Arg2, Arg3?, Arg4?) -> float`
+- `Nominal(Arg1, Arg2) -> float`
+- `Norm_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `Norm_Inv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Norm_S_Dist(Arg1: float, Arg2: bool) -> float`
+- `Norm_S_Inv(Arg1: float) -> float`
+- `NormDist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `NormInv(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `NormSDist(Arg1: float) -> float`
+- `NormSInv(Arg1: float) -> float`
+- `NPer(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `Npv(Arg1: float, Arg2, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `NumberValue(Arg1: str, Arg2: str, Arg3: str) -> float`
+- `Oct2Bin(Arg1, Arg2?) -> str`
+- `Oct2Dec(Arg1) -> str`
+- `Oct2Hex(Arg1, Arg2?) -> str`
+- `Odd(Arg1: float) -> float`
+- `OddFPrice(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9?) -> float`
+- `OddFYield(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9?) -> float`
+- `OddLPrice(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8?) -> float`
+- `OddLYield(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8?) -> float`
+- `Or(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> bool`
+- `PDuration(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Pearson(Arg1, Arg2) -> float`
+- `Percentile(Arg1, Arg2: float) -> float`
+- `Percentile_Exc(Arg1, Arg2: float) -> float`
+- `Percentile_Inc(Arg1, Arg2: float) -> float`
+- `PercentRank(Arg1, Arg2: float, Arg3?) -> float`
+- `PercentRank_Exc(Arg1, Arg2: float, Arg3?) -> float`
+- `PercentRank_Inc(Arg1, Arg2: float, Arg3?) -> float`
+- `Permut(Arg1: float, Arg2: float) -> float`
+- `Permutationa(Arg1: float, Arg2: float) -> float`
+- `Phi(Arg1: float) -> float`
+- `Phonetic(Arg1: Range) -> str`
+- `Pi() -> float`
+- `Pmt(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `Poisson(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `Poisson_Dist(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `Power(Arg1: float, Arg2: float) -> float`
+- `Ppmt(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5?, Arg6?) -> float`
+- `Price(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7?) -> float`
+- `PriceDisc(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `PriceMat(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6?) -> float`
+- `Prob(Arg1, Arg2, Arg3: float, Arg4?) -> float`
+- `Product(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Proper(Arg1: str) -> str`
+- `Pv(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?) -> float`
+- `Quartile(Arg1, Arg2: float) -> float`
+- `Quartile_Exc(Arg1, Arg2: float) -> float`
+- `Quartile_Inc(Arg1, Arg2: float) -> float`
+- `Quotient(Arg1, Arg2) -> float`
+- `Radians(Arg1: float) -> float`
+- `RandArray(Arg1?, Arg2?, Arg3?, Arg4?, Arg5?) -> Any`
+- `RandBetween(Arg1, Arg2) -> float`
+- `Rank(Arg1: float, Arg2: Range, Arg3?) -> float`
+- `Rank_Avg(Arg1: float, Arg2: Range, Arg3?) -> float`
+- `Rank_Eq(Arg1: float, Arg2: Range, Arg3?) -> float`
+- `Rate(Arg1: float, Arg2: float, Arg3: float, Arg4?, Arg5?, Arg6?) -> float`
+- `Received(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `Replace(Arg1: str, Arg2: float, Arg3: float, Arg4: str) -> str`
+- `ReplaceB(Arg1: str, Arg2: float, Arg3: float, Arg4: str) -> str`
+- `Rept(Arg1: str, Arg2: float) -> str`
+- `Roman(Arg1: float, Arg2?) -> str`
+- `Round(Arg1: float, Arg2: float) -> float`
+- `RoundBahtDown(Arg1: float) -> float`
+- `RoundBahtUp(Arg1: float) -> float`
+- `RoundDown(Arg1: float, Arg2: float) -> float`
+- `RoundUp(Arg1: float, Arg2: float) -> float`
+- `Rri(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `RSq(Arg1, Arg2) -> float`
+- `RTD(progID, server, topic1, topic2?, topic3?, topic4?, topic5?, topic6?, topic7?, topic8?, topic9?, topic10?, topic11?, topic12?, topic13?, topic14?, topic15?, topic16?, topic17?, topic18?, topic19?, topic20?, topic21?, topic22?, topic23?, topic24?, topic25?, topic26?, topic27?, topic28?) -> Any`
+- `Search(Arg1: str, Arg2: str, Arg3?) -> float`
+- `SearchB(Arg1: str, Arg2: str, Arg3?) -> float`
+- `Sec(Arg1: float) -> float`
+- `Sech(Arg1: float) -> float`
+- `Sequence(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `SeriesSum(Arg1, Arg2, Arg3, Arg4) -> float`
+- `Single(Arg1) -> Any`
+- `Sinh(Arg1: float) -> float`
+- `Skew(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Skew_p(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Sln(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Slope(Arg1, Arg2) -> float`
+- `Small(Arg1, Arg2: float) -> float`
+- `Sort(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `SortBy(Arg1, Arg2, Arg3, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `SqrtPi(Arg1) -> float`
+- `Standardize(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `StDev(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `StDev_P(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `StDev_S(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `StDevP(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `StEyx(Arg1, Arg2) -> float`
+- `StockHistory(Arg1, Arg2, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> Any`
+- `Substitute(Arg1: str, Arg2: str, Arg3: str, Arg4?) -> str`
+- `Subtotal(Arg1: float, Arg2: Range, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Sum(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `SumIf(Arg1: Range, Arg2, Arg3?) -> float`
+- `SumIfs(Arg1: Range, Arg2: Range, Arg3, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> float`
+- `SumProduct(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `SumSq(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `SumX2MY2(Arg1, Arg2) -> float`
+- `SumX2PY2(Arg1, Arg2) -> float`
+- `SumXMY2(Arg1, Arg2) -> float`
+- `Syd(Arg1: float, Arg2: float, Arg3: float, Arg4: float) -> float`
+- `T_Dist(Arg1: float, Arg2: float, Arg3: bool) -> float`
+- `T_Dist_2T(Arg1: float, Arg2: float) -> float`
+- `T_Dist_RT(Arg1: float, Arg2: float) -> float`
+- `T_Inv(Arg1: float, Arg2: float) -> float`
+- `T_Inv_2T(Arg1: float, Arg2: float) -> float`
+- `T_Test(Arg1, Arg2, Arg3: float, Arg4: float) -> float`
+- `Tanh(Arg1: float) -> float`
+- `TBillEq(Arg1, Arg2, Arg3?) -> float`
+- `TBillPrice(Arg1, Arg2, Arg3?) -> float`
+- `TBillYield(Arg1, Arg2, Arg3?) -> float`
+- `TDist(Arg1: float, Arg2: float, Arg3: float) -> float`
+- `Text(Arg1, Arg2: str) -> str`
+- `TextJoin(Arg1: str, Arg2: bool, Arg3: str, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?) -> str`
+- `ThaiDayOfWeek(Arg1: float) -> str`
+- `ThaiDigit(Arg1: str) -> str`
+- `ThaiMonthOfYear(Arg1: float) -> str`
+- `ThaiNumSound(Arg1: float) -> str`
+- `ThaiNumString(Arg1: float) -> str`
+- `ThaiStringLength(Arg1: str) -> float`
+- `ThaiYear(Arg1: float) -> float`
+- `TInv(Arg1: float, Arg2: float) -> float`
+- `Transpose(Arg1) -> Any`
+- `Trend(Arg1, Arg2?, Arg3?, Arg4?) -> Any`
+- `Trim(Arg1: str) -> str`
+- `TrimMean(Arg1, Arg2: float) -> float`
+- `TTest(Arg1, Arg2, Arg3: float, Arg4: float) -> float`
+- `Unichar(Arg1: float) -> str`
+- `Unicode(Arg1: str) -> float`
+- `Unique(Arg1, Arg2?, Arg3?) -> Any`
+- `USDollar(Arg1: float, Arg2: float) -> str`
+- `Var(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Var_P(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Var_S(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `VarP(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> float`
+- `Vdb(Arg1: float, Arg2: float, Arg3: float, Arg4: float, Arg5: float, Arg6?, Arg7?) -> float`
+- `VLookup(Arg1, Arg2, Arg3, Arg4?) -> Any`
+- `WebService(Arg1: str) -> Any`
+- `Weekday(Arg1, Arg2?) -> float`
+- `WeekNum(Arg1, Arg2?) -> float`
+- `Weibull(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `Weibull_Dist(Arg1: float, Arg2: float, Arg3: float, Arg4: bool) -> float`
+- `WorkDay(Arg1, Arg2, Arg3?) -> float`
+- `WorkDay_Intl(Arg1, Arg2, Arg3?, Arg4?) -> float`
+- `Xirr(Arg1, Arg2, Arg3?) -> float`
+- `XLookup(Arg1, Arg2, Arg3, Arg4?, Arg5?, Arg6?) -> Any`
+- `XMatch(Arg1, Arg2, Arg3?, Arg4?) -> float`
+- `Xnpv(Arg1, Arg2) -> float`
+- `Xor(Arg1, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> bool`
+- `YearFrac(Arg1, Arg2, Arg3?) -> float`
+- `YieldDisc(Arg1, Arg2, Arg3, Arg4, Arg5?) -> float`
+- `YieldMat(Arg1, Arg2, Arg3, Arg4, Arg5, Arg6?) -> float`
+- `Z_Test(Arg1, Arg2: float, Arg3?) -> float`
+- `ZTest(Arg1, Arg2: float, Arg3?) -> float`
+
+## Application
+*Bases: _Application*
+
+## Global
+*Bases: _Global*
+
+## _Application
+
+**Properties:**
+- `ActiveCell: Range`
+- `ActiveChart: Chart`
+- `ActiveDialog: DialogSheet`
+- `ActiveEncryptionSession: Any`
+- `ActiveMenuBar: MenuBar`
+- `ActivePrinter: Any`
+- `ActiveProtectedViewWindow: ProtectedViewWindow`
+- `ActiveSheet: Any`
+- `ActiveWindow: Window`
+- `ActiveWorkbook: Workbook`
+- `AddIns: AddIns`
+- `AddIns2: AddIns2`
+- `AlertBeforeOverwriting: Any`
+- `AltStartupPath: Any`
+- `AlwaysUseClearType: Any`
+- `AnswerWizard: AnswerWizard`
+- `Application: Application`
+- `ArbitraryXMLSupportAvailable: Any`
+- `AskToUpdateLinks: Any`
+- `Assistance: IAssistance`
+- `Assistant: Assistant`
+- `AutoCorrect: AutoCorrect`
+- `AutoFormatAsYouTypeReplaceHyperlinks: Any`
+- `AutomationSecurity: MsoAutomationSecurity`
+- `AutoPercentEntry: Any`
+- `AutoRecover: AutoRecover`
+- `Build: Any`
+- `CalculateBeforeSave: Any`
+- `Calculation: XlCalculation`
+- `CalculationInterruptKey: XlCalculationInterruptKey`
+- `CalculationState: XlCalculationState`
+- `CalculationVersion: Any`
+- `Caller: Any`
+- `CanPlaySounds: Any`
+- `CanRecordSounds: Any`
+- `Caption: Any`
+- `CellDragAndDrop: Any`
+- `Cells: Range`
+- `ChartDataPointTrack: Any`
+- `Charts: Sheets`
+- `ClipboardFormats: Any`
+- `ClusterConnector: Any`
+- `ColorButtons: Any`
+- `Columns: Range`
+- `COMAddIns: COMAddIns`
+- `CommandBars: CommandBars`
+- `CommandUnderlines: XlCommandUnderlines`
+- `ConstrainNumeric: Any`
+- `ControlCharacters: Any`
+- `CopyObjectsWithCells: Any`
+- `Creator: XlCreator`
+- `CSVDisplayNumberConversionWarning: Any`
+- `CSVKeepColumnAsTextIfMultipleEntriesAreText: Any`
+- `CSVKeepDigitsWithEAsText: Any`
+- `CSVKeepLargeNumbersAsText: Any`
+- `CSVKeepLeadingZerosAsText: Any`
+- `Cursor: XlMousePointer`
+- `CursorMovement: Any`
+- `CustomListCount: Any`
+- `CutCopyMode: XlCutCopyMode`
+- `DataEntryMode: Any`
+- `DataPrivacyOptions: DataPrivacyOptions`
+- `DDEAppReturnCode: Any`
+- `DecimalSeparator: Any`
+- `DefaultFilePath: Any`
+- `DefaultPivotTableLayoutOptions: DefaultPivotTableLayoutOptions`
+- `DefaultSaveFormat: XlFileFormat`
+- `DefaultSheetDirection: Any`
+- `DefaultWebOptions: DefaultWebOptions`
+- `DeferAsyncQueries: Any`
+- `Dialogs: Dialogs`
+- `DialogSheets: Sheets`
+- `DisplayAlerts: Any`
+- `DisplayClipboardWindow: Any`
+- `DisplayCommentIndicator: XlCommentDisplayMode`
+- `DisplayDocumentActionTaskPane: Any`
+- `DisplayDocumentInformationPanel: Any`
+- `DisplayExcel4Menus: Any`
+- `DisplayFormulaAutoComplete: Any`
+- `DisplayFormulaBar: Any`
+- `DisplayFullScreen: Any`
+- `DisplayFunctionToolTips: Any`
+- `DisplayInfoWindow: Any`
+- `DisplayInsertOptions: Any`
+- `DisplayNoteIndicator: Any`
+- `DisplayPasteOptions: Any`
+- `DisplayRecentFiles: Any`
+- `DisplayScrollBars: Any`
+- `DisplayStatusBar: Any`
+- `EditDirectlyInCell: Any`
+- `EnableAnimations: Any`
+- `EnableAutoComplete: Any`
+- `EnableCancelKey: XlEnableCancelKey`
+- `EnableCheckFileExtensions: Any`
+- `EnableEvents: Any`
+- `EnableLargeOperationAlert: Any`
+- `EnableLivePreview: Any`
+- `EnableMacroAnimations: Any`
+- `EnableSound: Any`
+- `EnableTipWizard: Any`
+- `ErrorCheckingOptions: ErrorCheckingOptions`
+- `Excel4IntlMacroSheets: Sheets`
+- `Excel4MacroSheets: Sheets`
+- `ExtendList: Any`
+- `FeatureInstall: MsoFeatureInstall`
+- `FileConverters: Any`
+- `FileExportConverters: FileExportConverters`
+- `FileFind: IFind`
+- `FileSearch: FileSearch`
+- `FileValidation: MsoFileValidationMode`
+- `FileValidationPivot: XlFileValidationPivotMode`
+- `FindFormat: CellFormat`
+- `FixedDecimal: Any`
+- `FixedDecimalPlaces: Any`
+- `FlashFill: Any`
+- `FlashFillMode: Any`
+- `FormulaBarHeight: Any`
+- `GenerateGetPivotData: Any`
+- `GenerateTableRefs: XlGenerateTableRefs`
+- `Height: Any`
+- `HighQualityModeForGraphics: Any`
+- `Hinstance: Any`
+- `HinstancePtr: Any`
+- `Hwnd: Any`
+- `IgnoreRemoteRequests: Any`
+- `Interactive: Any`
+- `International: Any`
+- `IsSandboxed: Any`
+- `Iteration: Any`
+- `LanguageSettings: LanguageSettings`
+- `LargeButtons: Any`
+- `LargeOperationCellThousandCount: Any`
+- `Left: Any`
+- `LibraryPath: Any`
+- `MailSession: Any`
+- `MailSystem: XlMailSystem`
+- `MapPaperSize: Any`
+- `MathCoprocessorAvailable: Any`
+- `MaxChange: Any`
+- `MaxIterations: Any`
+- `MeasurementUnit: Any`
+- `MemoryFree: Any`
+- `MemoryTotal: Any`
+- `MemoryUsed: Any`
+- `MenuBars: MenuBars`
+- `MergeInstances: Any`
+- `Modules: Modules`
+- `MouseAvailable: Any`
+- `MoveAfterReturn: Any`
+- `MoveAfterReturnDirection: XlDirection`
+- `MultiThreadedCalculation: MultiThreadedCalculation`
+- `Name: Any`
+- `Names: Names`
+- `NetworkTemplatesPath: Any`
+- `NewWorkbook: NewFile`
+- `ODBCErrors: ODBCErrors`
+- `ODBCTimeout: Any`
+- `OLEDBErrors: OLEDBErrors`
+- `OnCalculate: Any`
+- `OnData: Any`
+- `OnDoubleClick: Any`
+- `OnEntry: Any`
+- `OnSheetActivate: Any`
+- `OnSheetDeactivate: Any`
+- `OnWindow: Any`
+- `OperatingSystem: Any`
+- `OrganizationName: Any`
+- `Parent: Application`
+- `Path: Any`
+- `PathSeparator: Any`
+- `PivotTableSelection: Any`
+- `PreviousSelections: Any`
+- `PrintCommunication: Any`
+- `ProductCode: Any`
+- `PromptForSummaryInfo: Any`
+- `ProtectedViewWindows: ProtectedViewWindows`
+- `QuickAnalysis: QuickAnalysis`
+- `Quitting: Any`
+- `Ready: Any`
+- `RecentFiles: RecentFiles`
+- `RecordRelative: Any`
+- `ReferenceStyle: XlReferenceStyle`
+- `RegisteredFunctions: Any`
+- `ReplaceFormat: CellFormat`
+- `RollZoom: Any`
+- `Rows: Range`
+- `RTD: RTD`
+- `SaveISO8601Dates: Any`
+- `ScreenUpdating: Any`
+- `Selection: Any`
+- `SensitivityLabelPolicy: SensitivityLabelPolicy`
+- `Sheets: Sheets`
+- `SheetsInNewWorkbook: Any`
+- `ShowChartTipNames: Any`
+- `ShowChartTipValues: Any`
+- `ShowConvertToDataType: Any`
+- `ShowDevTools: Any`
+- `ShowMenuFloaties: Any`
+- `ShowQuickAnalysis: Any`
+- `ShowSelectionFloaties: Any`
+- `ShowStartupDialog: Any`
+- `ShowToolTips: Any`
+- `ShowWindowsInTaskbar: Any`
+- `SmartArtColors: SmartArtColors`
+- `SmartArtLayouts: SmartArtLayouts`
+- `SmartArtQuickStyles: SmartArtQuickStyles`
+- `SmartTagRecognizers: SmartTagRecognizers`
+- `Speech: Speech`
+- `SpellingOptions: SpellingOptions`
+- `StandardFont: Any`
+- `StandardFontSize: Any`
+- `StartupPath: Any`
+- `StatusBar: Any`
+- `TemplatesPath: Any`
+- `ThisCell: Range`
+- `ThisWorkbook: Workbook`
+- `ThousandsSeparator: Any`
+- `Toolbars: Toolbars`
+- `Top: Any`
+- `TransitionMenuKey: Any`
+- `TransitionMenuKeyAction: Any`
+- `TransitionNavigKeys: Any`
+- `UILanguage: Any`
+- `UsableHeight: Any`
+- `UsableWidth: Any`
+- `UseClusterConnector: Any`
+- `UsedObjects: UsedObjects`
+- `UserControl: Any`
+- `UserLibraryPath: Any`
+- `UserName: Any`
+- `UseSystemSeparators: Any`
+- `Value: Any`
+- `VBE: VBE`
+- `Version: Any`
+- `Visible: Any`
+- `WarnOnFunctionNameConflict: Any`
+- `Watches: Watches`
+- `Width: Any`
+- `Windows: Windows`
+- `WindowsForPens: Any`
+- `WindowState: XlWindowState`
+- `Workbooks: Workbooks`
+- `WorksheetFunction: WorksheetFunction`
+- `Worksheets: Sheets`
+
+**Methods:**
+- `__call__() -> Any`
+- `_Evaluate(Name) -> Any`
+- `_FindFile() -> None`
+- `_MacroOptions(Macro?, Description?, HasMenu?, MenuText?, HasShortcutKey?, ShortcutKey?, Category?, StatusBar?, HelpContextID?, HelpFile?) -> None`
+- `_Run2(Macro?, Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `_Wait(Time) -> None`
+- `_WSFunction(Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `ActivateMicrosoftApp(Index: XlMSApplication) -> None`
+- `AddChartAutoFormat(Chart, Name: str, Description?) -> None`
+- `AddCustomList(ListArray, ByRow?) -> None`
+- `Calculate() -> None`
+- `CalculateFull() -> None`
+- `CalculateFullRebuild() -> None`
+- `CalculateUntilAsyncQueriesDone() -> None`
+- `CentimetersToPoints(Centimeters: float) -> float`
+- `CheckAbort(KeepAbort?) -> None`
+- `CheckSpelling(Word: str, CustomDictionary?, IgnoreUppercase?) -> bool`
+- `ConvertFormula(Formula, FromReferenceStyle: XlReferenceStyle, ToReferenceStyle?, ToAbsolute?, RelativeTo?) -> Any`
+- `DDEExecute(Channel: int, String: str) -> None`
+- `DDEInitiate(App: str, Topic: str) -> int`
+- `DDEPoke(Channel: int, Item, Data) -> None`
+- `DDERequest(Channel: int, Item: str) -> Any`
+- `DDETerminate(Channel: int) -> None`
+- `DeleteChartAutoFormat(Name: str) -> None`
+- `DeleteCustomList(ListNum: int) -> None`
+- `DisplayXMLSourcePane(XmlMap?) -> None`
+- `DoubleClick() -> None`
+- `Evaluate(Name) -> Any`
+- `ExecuteExcel4Macro(String: str) -> Any`
+- `FindFile() -> bool`
+- `GetCustomListContents(ListNum: int) -> Any`
+- `GetCustomListNum(ListArray) -> int`
+- `GetOpenFilename(FileFilter?, FilterIndex?, Title?, ButtonText?, MultiSelect?) -> Any`
+- `GetPhonetic(Text?) -> str`
+- `GetSaveAsFilename(InitialFilename?, FileFilter?, FilterIndex?, Title?, ButtonText?) -> Any`
+- `Goto(Reference?, Scroll?) -> None`
+- `Help(HelpFile?, HelpContextID?) -> None`
+- `InchesToPoints(Inches: float) -> float`
+- `InputBox(Prompt: str, Title?, Default?, Left?, Top?, HelpFile?, HelpContextID?, Type?) -> Any`
+- `Intersect(Arg1: Range, Arg2: Range, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Range`
+- `MacroOptions(Macro?, Description?, HasMenu?, MenuText?, HasShortcutKey?, ShortcutKey?, Category?, StatusBar?, HelpContextID?, HelpFile?, ArgumentDescriptions?) -> None`
+- `MailLogoff() -> None`
+- `MailLogon(Name?, Password?, DownloadNewMail?) -> None`
+- `NextLetter() -> Workbook`
+- `OnKey(Key: str, Procedure?) -> None`
+- `OnRepeat(Text: str, Procedure: str) -> None`
+- `OnTime(EarliestTime, Procedure: str, LatestTime?, Schedule?) -> None`
+- `OnUndo(Text: str, Procedure: str) -> None`
+- `Quit() -> None`
+- `RecordMacro(BasicCode?, XlmCode?) -> None`
+- `RegisterXLL(Filename: str) -> bool`
+- `Repeat() -> None`
+- `ResetTipWizard() -> None`
+- `Run(Macro?, Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `Save(Filename?) -> None`
+- `SaveWorkspace(Filename?) -> None`
+- `SendKeys(Keys, Wait?) -> None`
+- `SetDefaultChart(FormatName?, Gallery?) -> None`
+- `SharePointVersion(bstrUrl: str) -> int`
+- `Support(Object: Dispatch, ID: int, arg?) -> Any`
+- `Undo() -> None`
+- `Union(Arg1: Range, Arg2: Range, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Range`
+- `Volatile(Volatile?) -> None`
+- `Wait(Time) -> bool`
+
+**Property Accessors** *(parameterized — must be called as method):*
+- `FileDialog(fileDialogType: MsoFileDialogType) -> FileDialog`
+- `GetCaller(Index?) -> Any`
+- `GetClipboardFormats(Index?) -> Any`
+- `GetFileConverters(Index1?, Index2?) -> Any`
+- `GetInternational(Index?) -> Any`
+- `GetPreviousSelections(Index?) -> Any`
+- `GetRegisteredFunctions(Index1?, Index2?) -> Any`
+- `Range(Cell1, Cell2?) -> Range`
+- `ShortcutMenus(Index: int) -> Menu`
+
+## _Global
+
+**Properties:**
+- `ActiveCell: Range`
+- `ActiveChart: Chart`
+- `ActiveDialog: DialogSheet`
+- `ActiveMenuBar: MenuBar`
+- `ActivePrinter: Any`
+- `ActiveSheet: Any`
+- `ActiveWindow: Window`
+- `ActiveWorkbook: Workbook`
+- `AddIns: AddIns`
+- `Application: Application`
+- `Assistant: Assistant`
+- `Cells: Range`
+- `Charts: Sheets`
+- `Columns: Range`
+- `CommandBars: CommandBars`
+- `Creator: XlCreator`
+- `DDEAppReturnCode: Any`
+- `DialogSheets: Sheets`
+- `Excel4IntlMacroSheets: Sheets`
+- `Excel4MacroSheets: Sheets`
+- `MenuBars: MenuBars`
+- `Modules: Modules`
+- `Names: Names`
+- `Parent: Application`
+- `Rows: Range`
+- `Selection: Any`
+- `Sheets: Sheets`
+- `ThisWorkbook: Workbook`
+- `Toolbars: Toolbars`
+- `Windows: Windows`
+- `Workbooks: Workbooks`
+- `WorksheetFunction: WorksheetFunction`
+- `Worksheets: Sheets`
+
+**Methods:**
+- `_Evaluate(Name) -> Any`
+- `_Run2(Macro?, Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `Calculate() -> None`
+- `DDEExecute(Channel: int, String: str) -> None`
+- `DDEInitiate(App: str, Topic: str) -> int`
+- `DDEPoke(Channel: int, Item, Data) -> None`
+- `DDERequest(Channel: int, Item: str) -> Any`
+- `DDETerminate(Channel: int) -> None`
+- `Evaluate(Name) -> Any`
+- `ExecuteExcel4Macro(String: str) -> Any`
+- `Intersect(Arg1: Range, Arg2: Range, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Range`
+- `Run(Macro?, Arg1?, Arg2?, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Any`
+- `SendKeys(Keys, Wait?) -> None`
+- `Union(Arg1: Range, Arg2: Range, Arg3?, Arg4?, Arg5?, Arg6?, Arg7?, Arg8?, Arg9?, Arg10?, Arg11?, Arg12?, Arg13?, Arg14?, Arg15?, Arg16?, Arg17?, Arg18?, Arg19?, Arg20?, Arg21?, Arg22?, Arg23?, Arg24?, Arg25?, Arg26?, Arg27?, Arg28?, Arg29?, Arg30?) -> Range`
+
+**Property Accessors** *(parameterized — must be called as method):*
+- `Range(Cell1, Cell2?) -> Range`
+- `ShortcutMenus(Index: int) -> Menu`
+

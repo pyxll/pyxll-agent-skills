@@ -1,0 +1,46 @@
+{
+  "context": "Tests whether the agent uses the correct Excel COM API member names for ListObject (Excel Table) operations, distinguishing between properties, methods, and property accessors as documented rather than inventing plausible-sounding alternatives.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "ListObjects.Add() to create table",
+      "description": "Code creates the table using .ListObjects.Add( on the worksheet object — not an invented method such as .CreateTable(, .AddTable(, or .Tables.Add(",
+      "max_score": 20
+    },
+    {
+      "name": "No invented table creation method",
+      "description": "Code does NOT use .CreateTable(, .AddTable(, .NewTable(, or other non-existent method names to create the table",
+      "max_score": 10
+    },
+    {
+      "name": "Table name set via .Name property",
+      "description": "The table's name is set via a property assignment, e.g. table.Name = 'SalesData', not via a method call like table.SetName('SalesData') or table.Rename('SalesData')",
+      "max_score": 10
+    },
+    {
+      "name": "ListRows.Add() to insert row",
+      "description": "Code adds a new row to the table using .ListRows.Add( on the ListObject — not .AddRow(, .InsertRow(, .Rows.Add(, or writing directly to a Range",
+      "max_score": 20
+    },
+    {
+      "name": "No invented row insertion method",
+      "description": "Code does NOT use .AddRow(, .InsertRow(, .NewRow(, or other non-existent method names on the table to insert a row",
+      "max_score": 10
+    },
+    {
+      "name": "DataBodyRange as property (no parens)",
+      "description": "Code accesses the data area via .DataBodyRange as a plain attribute (e.g., table.DataBodyRange.Font.Bold = True), not as a method call .DataBodyRange()",
+      "max_score": 15
+    },
+    {
+      "name": "No .DataBodyRange() call",
+      "description": "Code does NOT call .DataBodyRange() with parentheses as if it were a method",
+      "max_score": 5
+    },
+    {
+      "name": "Font.Bold set as property",
+      "description": "Bold formatting is applied via .Font.Bold = True (property assignment), not via a method call like .Font.SetBold(True) or .Font.Bold(True)",
+      "max_score": 10
+    }
+  ]
+}
