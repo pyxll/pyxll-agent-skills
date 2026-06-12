@@ -12,6 +12,7 @@ These skills are **not** slash commands or user-invoked actions. Once installed,
 
 ```bash
 /plugin marketplace add pyxll/pyxll-agent-skills
+/plugin install pyxll-agent-skills@pyxll
 ```
 
 ### Other AI Clients
