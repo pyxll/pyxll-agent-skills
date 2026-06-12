@@ -4,7 +4,7 @@ description: Fetch the PyXLL documentation and use it as context for any task in
 user-invocable: false
 metadata:
   author: pyxll
-  version: 0.1.0
+  version: 0.1.3
 ---
 
 Fetch the PyXLL documentation and use it as context for any PyXLL task. Training-data knowledge of PyXLL is incomplete and may be wrong — the live docs are the only authoritative source.
@@ -39,21 +39,24 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
    The script outputs a list of matching page URLs (one per line). Fetch each
    returned URL individually using curl.
 
+4. If the task involves writing or modifying code that uses the Excel COM API — any
+   code that calls `pyxll.xl_app()` or `XLCell.to_range()`, or that accesses COM
+   objects such as `Range`, `Worksheet`, `Workbook`, `Font`, `Interior`, `Borders`,
+   etc.:
+   - Invoke the **pywin32-excel-docs** skill before writing any code. Its `resources/`
+     directory is the authoritative reference for all Excel COM classes — do not rely
+     on training data for COM API details.
+   - Fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full — it
+     documents critical differences between VBA and Python, including how COM
+     properties that take arguments must be called as `Get<PropertyName>(args)` rather
+     than `Property(args)` as in VBA.
+
 ## Rules
 
 - ALWAYS fetch these docs before writing, modifying, or troubleshooting any
   PyXLL-specific code or behaviour. Before suggesting a manual workaround for a
   PyXLL problem, check whether PyXLL already has a built-in solution (decorator
   parameter, config key, or feature).
-- Do NOT rely on training-data knowledge alone for PyXLL APIs — the docs are authoritative.
-- Before writing any code that calls the Excel COM API (Range, Worksheet, Workbook, etc.):
-  - Fetch https://www.pyxll.com/docs/userguide/vba.md and read it in full. It documents
-    critical differences between VBA and Python — including how COM properties that take
-    arguments must be called as `Get<PropertyName>(args)` in Python rather than
-    `Property(args)` as in VBA.
-  - Consult the **pywin32-excel-docs** skill for method signatures, property types, property
-    accessors, and enum constants. Its `resources/` directory is the authoritative reference
-    for all Excel COM classes — do not rely on training data for COM API details.
 - Before using any PyXLL class, function, decorator, or configuration setting
   (including pyxll.cfg section names and their keys), fetch the relevant documentation
   and use only what is explicitly documented. Never infer behaviour, key names, or

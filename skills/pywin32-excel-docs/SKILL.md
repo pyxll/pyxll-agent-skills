@@ -1,10 +1,10 @@
 ---
 name: pywin32-excel-docs
-description: Reference for the Microsoft Excel COM API via pywin32. Use this skill whenever writing or reviewing Python code that interacts with Excel using the Excel COM API via win32com, pywin32, or the PyXLL add-in — including working with workbooks, worksheets, ranges, formatting, charts, pivot tables, shapes, and Excel constants.
+description: Reference for the Microsoft Excel COM API via pywin32. Use this skill whenever writing or reviewing Python code that interacts with Excel using the Excel COM API via win32com, pywin32, or the PyXLL add-in — including code that calls pyxll.xl_app() or XLCell.to_range() — and when working with workbooks, worksheets, ranges, formatting, charts, pivot tables, shapes, and Excel constants.
 user-invocable: false
 metadata:
   author: pyxll
-  version: 0.1.0
+  version: 0.1.3
 ---
 
 # Excel COM API Reference Skill

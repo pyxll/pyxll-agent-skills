@@ -1,9 +1,9 @@
 {
-  "total_scenarios": 11,
+  "total_scenarios": 12,
   "instructions_coverage": {
-    "total_instructions": 21,
-    "instructions_tested": 19,
-    "coverage_percentage": 90
+    "total_instructions": 22,
+    "instructions_tested": 20,
+    "coverage_percentage": 91
   },
   "scenario_index": [
     {
@@ -60,11 +60,16 @@
       "folder": "scenario-10",
       "capability": "Cross-skill macro with GetOffset",
       "instructions_covered": [1, 3, 6, 9, 10, 13, 14, 16, 18]
+    },
+    {
+      "folder": "scenario-11",
+      "capability": "XLCell.to_range() as COM trigger",
+      "instructions_covered": [6, 9, 11, 13, 22]
     }
   ],
   "reason_distribution": {
     "reminder": 9,
-    "new knowledge": 10,
+    "new knowledge": 11,
     "preference": 2
   }
 }

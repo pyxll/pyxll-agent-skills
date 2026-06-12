@@ -125,6 +125,12 @@
       "original_snippets": "When operating on cells by category (blanks, formulas, constants, errors, etc.), use SpecialCells(Type) to select them rather than reading the full range value and filtering in Python. Example: rng.SpecialCells(c.xlCellTypeBlanks) selects all blank cells in one call. Python iteration over range values is slower and bypasses the COM object model.",
       "relevant_when": "When writing code that needs to find or operate on cells matching a type criterion — blank cells, cells with formulas, cells with constants, cells with errors",
       "why_given": "preference"
+    },
+    {
+      "instruction": "Invoke the pywin32-excel-docs skill before writing any code that calls pyxll.xl_app() or XLCell.to_range(), or that accesses any Excel COM object",
+      "original_snippets": "If the task involves writing or modifying code that uses the Excel COM API — any code that calls `pyxll.xl_app()` or `XLCell.to_range()`, or that accesses COM objects such as `Range`, `Worksheet`, `Workbook`, `Font`, `Interior`, `Borders`, etc. — invoke the **pywin32-excel-docs** skill before writing any code.",
+      "relevant_when": "When a PyXLL task involves cell formatters (XLCell.to_range()), macros, or any code that touches the Excel object model",
+      "why_given": "new knowledge"
     }
   ]
 }
