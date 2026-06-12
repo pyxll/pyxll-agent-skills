@@ -59,10 +59,11 @@ Browse the tile on the [Tessl registry](https://tessl.io/registry/pyxll/pyxll-ag
 | Skill | Description |
 |-------|-------------|
 | `fetch-pyxll-docs` | Fetch the PyXLL documentation and use it as context when writing, reviewing, or debugging PyXLL code |
+| `pywin32-excel-docs` | Reference for the Excel COM API via pywin32 — covers workbooks, worksheets, ranges, formatting, charts, pivot tables, shapes, and constants |
 
 ## Contributing
 
-To add a new skill, create a directory under `skills/pyxll/` with a `SKILL.md` file following the [Agent Skills specification](https://agentskills.io/specification), then add it to `tile.json`.
+To add a new skill, create a directory under `skills/` with a `SKILL.md` file following the [Agent Skills specification](https://agentskills.io/specification), then add it to `.tessl-plugin/plugin.json`.
 
 ## Resources
 
