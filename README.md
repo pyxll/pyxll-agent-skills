@@ -2,6 +2,8 @@
 
 A curated collection of [Agent Skills](https://agentskills.io/home) for working with [PyXLL](https://www.pyxll.com), the Python Excel add-in. These skills help AI agents understand and use PyXLL APIs accurately.
 
+[![tessl](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.tessl.io%2Fv1%2Fbadges%2Fpyxll%2Fpyxll-agent-skills)](https://tessl.io/registry/pyxll/pyxll-agent-skills)
+
 ## How They Work
 
 These skills are **not** slash commands or user-invoked actions. Once installed, the agent automatically loads the relevant skill when your prompt matches its use case. See [skill invocation control](https://code.claude.com/docs/en/skills#control-who-invokes-a-skill) for more details.
