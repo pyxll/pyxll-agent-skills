@@ -4,7 +4,7 @@ description: Fetch the PyXLL documentation and use it as context for any task in
 user-invocable: false
 metadata:
   author: pyxll
-  version: 0.1.3
+  version: 0.1.4
 ---
 
 Fetch the PyXLL documentation and use it as context for any PyXLL task. Training-data knowledge of PyXLL is incomplete and may be wrong — the live docs are the only authoritative source.
@@ -50,6 +50,13 @@ Fetch the PyXLL documentation and use it as context for any PyXLL task. Training
      documents critical differences between VBA and Python, including how COM
      properties that take arguments must be called as `Get<PropertyName>(args)` rather
      than `Property(args)` as in VBA.
+
+5. If the task involves writing or modifying a ribbon or context menu XML file
+   (customUI XML, `ribbon =` in `pyxll.cfg`, or any `onAction`/`getLabel`/`getEnabled`
+   ribbon callback):
+   - Invoke the **office-customui-xsd** skill before writing any XML. It is the
+     authoritative reference for which elements, attributes, and nesting are valid —
+     training-data knowledge of the schema is incomplete and produces invalid XML.
 
 ## Rules
 

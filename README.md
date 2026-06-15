@@ -63,6 +63,7 @@ Browse the tile on the [Tessl registry](https://tessl.io/registry/pyxll/pyxll-ag
 |-------|-------------|
 | `fetch-pyxll-docs` | Fetch the PyXLL documentation and use it as context when writing, reviewing, or debugging PyXLL code |
 | `pywin32-excel-docs` | Reference for the Excel COM API via pywin32 — covers workbooks, worksheets, ranges, formatting, charts, pivot tables, shapes, and constants |
+| `office-customui-xsd` | Reference for the Office CustomUI XML schema — covers ribbon tabs, groups, controls, context menus, QAT, and Backstage customisation |
 
 ## Contributing
 
