@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1",
   "id": "pyxll-agent-skills",
-  "name": "PyXLL Agent Skills",
+  "name": "pyxll-agent-skills",
   "version": "0.1.4",
   "description": "Agent skills for PyXLL that ensure AI always consults the live documentation — not outdated training data — when writing, configuring, or debugging PyXLL code.",
   "author": "PyXLL <support@pyxll.com>",
