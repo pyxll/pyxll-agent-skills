@@ -44,7 +44,7 @@
     },
     {
       "name": "External script uses Dispatch",
-      "description": "Code uses win32com.client.Dispatch('Excel.Application') to obtain the Application object (appropriate for a standalone command-line script, not xl_app())",
+      "description": "Code obtains the Application object via win32com.client.Dispatch('Excel.Application'). It must NOT use pyxll.xl_app() and must NOT use gencache.EnsureDispatch.",
       "max_score": 5
     },
     {

@@ -4,7 +4,7 @@
 
 A data engineering team is deploying a new PyXLL-based Excel add-in for their reporting platform. They need a `pyxll.cfg` configuration file that satisfies the following requirements:
 
-- Python modules for the add-in are stored in a subdirectory called `./modules` and must be loaded by PyXLL at startup
+- The add-in's Python code is a package called `reporting_addin`, located in `./src`. PyXLL must import it at startup.
 - Logging should write to `./logs/pyxll.log` at INFO level
 - The Python import path must include `./lib` so that shared utility packages can be imported
 

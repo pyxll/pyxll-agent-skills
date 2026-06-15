@@ -4,7 +4,7 @@ description: Reference for the Microsoft Excel COM API via pywin32. Use this ski
 user-invocable: false
 metadata:
   author: pyxll
-  version: 0.1.3
+  version: 0.1.4
 ---
 
 # Excel COM API Reference Skill
@@ -45,9 +45,9 @@ Python code that drives Excel via COM.
    `rng.GetOffset(1, 0)` — NOT `rng.Offset`.
 
 5. **Always use `win32com.client.constants.<name>` for enum/constant values.** Never use bare
-   integer literals for constants unless the integer value is explicitly confirmed from
-   `resources/enums_xl.md`. The constant name (e.g. `xlCenter`) is the authoritative
-   identifier; its integer value can change across Excel versions.
+   integer literals for constants. The constant name (e.g. `xlCenter`) is the authoritative
+   identifier; its integer value can change across Excel versions. The integer values in
+   `resources/enums_xl.md` are for reference only — use the named constant, not the number.
 
 6. **Use `pyxll.xl_app()` to get the Application object when running inside Excel via PyXLL.**
    Only use `win32com.client.Dispatch("Excel.Application")` in external scripts.
@@ -88,6 +88,8 @@ import win32com.client
 app = win32com.client.Dispatch("Excel.Application")
 c = win32com.client.constants
 ```
+
+Do **not** use `win32com.client.gencache.EnsureDispatch` — use `Dispatch` only.
 
 Everything below `app` in the object hierarchy is identical in both cases.
 
@@ -163,7 +165,7 @@ rng.Value = [[1, 2], [3, 4]]
 # Formatting
 rng.Font.Bold = True
 rng.Interior.Color = 0xFFFF00     # yellow
-rng.Borders.LineStyle = 1         # xlContinuous = 1
+rng.Borders.LineStyle = c.xlContinuous
 
 # Enum constants via win32com.client.constants
 wb.SaveAs(r"C:\out.xlsx", FileFormat=c.xlOpenXMLWorkbook)
