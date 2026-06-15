@@ -1,0 +1,56 @@
+{
+  "context": "Tests whether the agent recognises that PyXLL cell formatters involve Excel COM objects via XLCell.to_range() and consults the pywin32-excel-docs skill before writing the COM formatting code — the non-obvious COM entry point that is easy to miss.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "pywin32-excel-docs consulted",
+      "description": "docs_log.md records that at least one pywin32-excel-docs resource file was read (e.g. resources/formatting.md, resources/range.md, or resources/index.md)",
+      "max_score": 20
+    },
+    {
+      "name": "Formatting resource referenced",
+      "description": "docs_log.md specifically mentions a pywin32-excel-docs file related to formatting or the Interior object",
+      "max_score": 15
+    },
+    {
+      "name": "Interior.Color or Interior.ColorIndex used",
+      "description": "formatter.py sets Interior.Color or Interior.ColorIndex to apply the background colour — a documented COM property",
+      "max_score": 12
+    },
+    {
+      "name": "No invented COM property names",
+      "description": "formatter.py does NOT use non-existent COM properties such as .BackgroundColor, .FillColor, .CellColor, or .Background",
+      "max_score": 12
+    },
+    {
+      "name": "PyXLL docs fetched",
+      "description": "docs_log.md records that https://www.pyxll.com/llms.txt or at least one pyxll.com URL was fetched",
+      "max_score": 10
+    },
+    {
+      "name": "Documented formatter registration",
+      "description": "formatter.py registers the formatter using a documented PyXLL mechanism — not a guessed or invented approach",
+      "max_score": 10
+    },
+    {
+      "name": "Background cleared for neutral cells",
+      "description": "formatter.py handles the third case: cells that are neither >1000 nor negative have their background colour removed using a documented COM approach",
+      "max_score": 8
+    },
+    {
+      "name": "COM not obtained via Dispatch",
+      "description": "formatter.py does NOT call win32com.client.Dispatch('Excel.Application') to obtain the Excel object — accesses the COM range via the PyXLL-provided cell object instead",
+      "max_score": 5
+    },
+    {
+      "name": "Multiple sources in log",
+      "description": "docs_log.md contains at least 3 distinct entries, each with a source and a one-line note",
+      "max_score": 5
+    },
+    {
+      "name": "Both value conditions present",
+      "description": "formatter.py checks both the >1000 condition and the <0 condition as distinct branches",
+      "max_score": 3
+    }
+  ]
+}

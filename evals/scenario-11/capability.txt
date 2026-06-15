@@ -1,0 +1,1 @@
+XLCell.to_range() as COM trigger
