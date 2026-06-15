@@ -1,9 +1,9 @@
 {
-  "total_scenarios": 12,
+  "total_scenarios": 17,
   "instructions_coverage": {
-    "total_instructions": 22,
-    "instructions_tested": 20,
-    "coverage_percentage": 91
+    "total_instructions": 38,
+    "instructions_tested": 34,
+    "coverage_percentage": 89
   },
   "scenario_index": [
     {
@@ -65,11 +65,36 @@
       "folder": "scenario-11",
       "capability": "XLCell.to_range() as COM trigger",
       "instructions_covered": [6, 9, 11, 13, 22]
+    },
+    {
+      "folder": "scenario-12",
+      "capability": "Multi-file ribbon merge with ordering",
+      "instructions_covered": [23, 24, 29, 30, 31]
+    },
+    {
+      "folder": "scenario-13",
+      "capability": "dynamicMenu with runtime Python content",
+      "instructions_covered": [23, 24, 32, 33]
+    },
+    {
+      "folder": "scenario-14",
+      "capability": "Context menu control restrictions",
+      "instructions_covered": [23, 24, 27, 38]
+    },
+    {
+      "folder": "scenario-15",
+      "capability": "Ribbon callback signatures and IRibbonUI",
+      "instructions_covered": [23, 24, 35, 36, 37]
+    },
+    {
+      "folder": "scenario-16",
+      "capability": "Custom PNG images and loadImage",
+      "instructions_covered": [23, 25, 34]
     }
   ],
   "reason_distribution": {
-    "reminder": 9,
-    "new knowledge": 11,
+    "reminder": 13,
+    "new knowledge": 23,
     "preference": 2
   }
 }

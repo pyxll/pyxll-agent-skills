@@ -1,0 +1,1 @@
+Ribbon callback signatures and IRibbonUI

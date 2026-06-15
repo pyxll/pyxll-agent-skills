@@ -23,8 +23,8 @@
       "max_score": 15
     },
     {
-      "name": "Modules path configured",
-      "description": "pyxll.cfg contains a documented key that points to ./modules as the location for add-in Python modules",
+      "name": "Modules key configured",
+      "description": "The [PYXLL] section has a 'modules' key whose value is an importable Python module or package name — not a file path. It must not contain slashes, a leading dot, or a .py extension. The expected value is 'reporting_addin'. Do NOT evaluate the pythonpath key for this criterion.",
       "max_score": 10
     },
     {

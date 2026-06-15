@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent knows which controls are forbidden in context menus (editBox, comboBox, dropDown, box, buttonGroup, labelControl), that contextMenus must appear after ribbon in the document, and that toggleButton is a valid context menu control.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "contextMenus after ribbon",
+      "description": "If both <ribbon> and <contextMenus> elements are present, <contextMenus> appears after <ribbon> in the document. If only <contextMenus> is present (no <ribbon> element), this criterion is satisfied automatically.",
+      "max_score": 15
+    },
+    {
+      "name": "No editBox in context menu",
+      "description": "No <editBox> element appears inside any <contextMenu> element",
+      "max_score": 20
+    },
+    {
+      "name": "No comboBox or dropDown in context menu",
+      "description": "No <comboBox> or <dropDown> element appears inside any <contextMenu> element",
+      "max_score": 15
+    },
+    {
+      "name": "Stateful control used for review state",
+      "description": "Either a <toggleButton> or a <checkBox> is used in the context menu for the mark-as-reviewed control (both are valid in context menus and both expose a pressed/checked state). This criterion tests that the agent chose a stateful control rather than a plain <button> or omitting the control entirely.",
+      "max_score": 15
+    },
+    {
+      "name": "Built-in context menu referenced by idMso",
+      "description": "The <contextMenu> element targeting the cell context menu uses idMso=\"ContextMenuCell\" (not a custom id attribute)",
+      "max_score": 15
+    },
+    {
+      "name": "module.function callbacks",
+      "description": "All onAction (and getPressed) callback values use module.function format — i.e. compliance_tools.some_function",
+      "max_score": 10
+    },
+    {
+      "name": "Unique IDs in context menu",
+      "description": "All custom id attributes on elements inside the contextMenu are unique",
+      "max_score": 10
+    }
+  ]
+}

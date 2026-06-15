@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent correctly configures PyXLL to load multiple ribbon files, uses shared tab IDs for merging, and applies PyXLL-specific insertBefore/insertAfter ordering attributes with the correct semantics.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "Multi-file config syntax",
+      "description": "pyxll.cfg lists both XML files under the ribbon key using comma-separated or newline-indented syntax (not just a single path, and not a space-separated list on one line)",
+      "max_score": 10
+    },
+    {
+      "name": "Shared tab ID for merge",
+      "description": "Both XML files declare a <tab> element with the same id attribute value, triggering PyXLL's merge behaviour rather than creating two separate tabs",
+      "max_score": 15
+    },
+    {
+      "name": "insertBefore or insertAfter used",
+      "description": "The Reporting group element has an insertBefore or insertAfter attribute to control its position relative to the Data Science groups",
+      "max_score": 15
+    },
+    {
+      "name": "Merge attribute value is a custom ID",
+      "description": "The value of insertBefore or insertAfter is a custom id string that matches a group defined in data_ribbon.xml — NOT an idMso value (built-in Office identifiers do not start with lowercase letters and are camelCase)",
+      "max_score": 15
+    },
+    {
+      "name": "Only one merge attribute per element",
+      "description": "No single element has both insertBefore and insertAfter attributes set simultaneously",
+      "max_score": 10
+    },
+    {
+      "name": "module.function callbacks",
+      "description": "All onAction (and any other callback) attribute values use module.function format — i.e. contain exactly one dot with a non-empty module name before it (e.g. ds_tools.on_prepare, not just on_prepare)",
+      "max_score": 20
+    },
+    {
+      "name": "Unique IDs within each file",
+      "description": "All custom id attribute values within data_ribbon.xml are unique; same for report_ribbon.xml",
+      "max_score": 15
+    }
+  ]
+}

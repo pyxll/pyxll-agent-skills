@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent sets loadImage=pyxll.load_image on the customUI root (required for correct PNG transparency), keeps image attributes mutually exclusive, and uses the module:resource format for package-embedded images.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "loadImage on customUI root",
+      "description": "The <customUI> root element has loadImage=\"pyxll.load_image\"",
+      "max_score": 25
+    },
+    {
+      "name": "No image + imageMso together",
+      "description": "No element has both an image attribute and an imageMso attribute simultaneously",
+      "max_score": 15
+    },
+    {
+      "name": "No image + getImage together",
+      "description": "No element has both an image attribute and a getImage attribute simultaneously",
+      "max_score": 10
+    },
+    {
+      "name": "No imageMso + getImage together",
+      "description": "No element has both an imageMso attribute and a getImage attribute simultaneously",
+      "max_score": 10
+    },
+    {
+      "name": "Package resource image format",
+      "description": "The two custom PNG buttons reference their images using the module:resource format (e.g. mw_addin:run_analysis.png) in the image attribute, NOT as a bare filename",
+      "max_score": 20
+    },
+    {
+      "name": "Built-in icon uses imageMso",
+      "description": "The Refresh Data button uses imageMso (not the image attribute) to reference a built-in Office icon",
+      "max_score": 10
+    },
+    {
+      "name": "module.function callbacks",
+      "description": "All onAction callback values use module.function format (e.g. mw_addin.ribbon.on_run)",
+      "max_score": 10
+    }
+  ]
+}

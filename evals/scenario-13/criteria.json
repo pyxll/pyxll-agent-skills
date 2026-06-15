@@ -1,0 +1,41 @@
+{
+  "context": "Tests whether the agent uses dynamicMenu correctly: getContent is required, the callback returns an XML string (not an object), the returned XML has a <menu> root with the correct namespace, and content is refreshed on each open.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "dynamicMenu getContent attribute",
+      "description": "The dynamicMenu element in pricing_ribbon.xml has a getContent attribute",
+      "max_score": 15
+    },
+    {
+      "name": "getContent callback returns a string",
+      "description": "The Python function referenced by getContent returns a str value (not an lxml element, dict, or other type)",
+      "max_score": 15
+    },
+    {
+      "name": "Returned XML root is <menu>",
+      "description": "The string returned by the getContent callback has <menu ...> as its root element — NOT <customUI>, <ribbon>, or any other element",
+      "max_score": 20
+    },
+    {
+      "name": "Namespace in returned XML",
+      "description": "The returned <menu> element includes the CustomUI namespace declaration: xmlns=\"http://schemas.microsoft.com/office/2009/07/customui\"",
+      "max_score": 15
+    },
+    {
+      "name": "Refresh on open",
+      "description": "The dynamicMenu element has invalidateContentOnDrop=\"true\" so the menu content is regenerated each time it is opened",
+      "max_score": 10
+    },
+    {
+      "name": "module.function callbacks",
+      "description": "All callback attribute values in pricing_ribbon.xml use module.function format (contain a dot with a non-empty module name before it)",
+      "max_score": 15
+    },
+    {
+      "name": "Callback name matches Python function",
+      "description": "The function name used in the getContent attribute value (after the dot) matches a function defined in pricing_ribbon.py",
+      "max_score": 10
+    }
+  ]
+}

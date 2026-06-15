@@ -131,6 +131,102 @@
       "original_snippets": "If the task involves writing or modifying code that uses the Excel COM API — any code that calls `pyxll.xl_app()` or `XLCell.to_range()`, or that accesses COM objects such as `Range`, `Worksheet`, `Workbook`, `Font`, `Interior`, `Borders`, etc. — invoke the **pywin32-excel-docs** skill before writing any code.",
       "relevant_when": "When a PyXLL task involves cell formatters (XLCell.to_range()), macros, or any code that touches the Excel object model",
       "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Callback attribute values (onAction, getLabel, getEnabled, etc.) must be module.function strings — the module must be importable from the Python path",
+      "original_snippets": "Callbacks are `module.function` strings — e.g. `\"my_module.on_button_click\"`. All `onAction`, `getLabel`, `getEnabled`, etc. attributes require this format. The module must be importable from the Python path.",
+      "relevant_when": "When writing any customUI XML that includes callback attributes",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "All custom id attribute values must be unique across the entire customUI XML file",
+      "original_snippets": "IDs must be unique across the entire XML file. Reusing an `id` anywhere in the file is a schema error.",
+      "relevant_when": "When writing any customUI XML with custom id attributes on tabs, groups, or controls",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "Image attributes are mutually exclusive: specify only one of image, imageMso, or getImage on any control",
+      "original_snippets": "Image attributes are mutually exclusive. Specify only one of `image`, `imageMso`, or `getImage` on any control — not multiple.",
+      "relevant_when": "When adding images to any ribbon control or group",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Positioning attributes are mutually exclusive: use only one of insertAfterMso, insertBeforeMso, insertAfterQ, insertBeforeQ per control",
+      "original_snippets": "Positioning attributes are mutually exclusive. Use only one of `insertAfterMso`, `insertBeforeMso`, `insertAfterQ`, `insertBeforeQ` per control.",
+      "relevant_when": "When positioning a tab, group, or control relative to built-in or qualified elements",
+      "why_given": "reminder"
+    },
+    {
+      "instruction": "The contextMenus element must appear after the ribbon element in the customUI document",
+      "original_snippets": "Note: `contextMenus` must come after `ribbon`",
+      "relevant_when": "When writing customUI XML that includes both ribbon and contextMenus sections",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "size=\"large\" is only valid on button and gallery elements inside ribbon groups — not in menus, context menus, or buttonGroups",
+      "original_snippets": "`size=\"large\"` is only valid on buttons inside ribbon groups.",
+      "relevant_when": "When setting size on a button inside a menu, context menu, or buttonGroup",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Multiple ribbon XML files can be specified in pyxll.cfg under the ribbon key, comma-separated or newline-indented; PyXLL merges them at load time",
+      "original_snippets": "The `ribbon` key in `[PYXLL]` accepts a single file or a list of files (comma-separated or one per line). All listed files are loaded and merged into one ribbon.",
+      "relevant_when": "When configuring a PyXLL add-in that has more than one ribbon XML file",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "PyXLL merges ribbon files by ID: tab or group elements sharing the same id are merged; elements with unique IDs are appended in file-load order",
+      "original_snippets": "Two `tab` elements share the same `id` → Merged into one tab; their `group` children are combined. Two `group` elements (in the same merged tab) share the same `id` → Merged into one group. A `tab` or `group` has a unique `id` → Appended in file-load order.",
+      "relevant_when": "When writing multiple ribbon XML files intended to contribute to a shared tab or group",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "insertBefore and insertAfter are PyXLL-only merge attributes (not in the XML schema); their values must be custom id strings, not idMso values; only one may be set per element",
+      "original_snippets": "PyXLL recognises two attributes that are not part of the XML schema — PyXLL strips them before sending the final XML to Excel... Values are custom `id` strings — NOT `idMso` values... Only one of `insertBefore` or `insertAfter` may be set on a given element (not both).",
+      "relevant_when": "When writing a ribbon XML file that needs to control the order of groups or controls relative to elements defined in another file",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "dynamicMenu requires a getContent callback attribute; without it the element is invalid",
+      "original_snippets": "`getContent` is **required**.",
+      "relevant_when": "When using a dynamicMenu element in a ribbon group, menu, context menu, or buttonGroup",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "The getContent callback for dynamicMenu must return an XML string whose root element is <menu> with the customUI namespace declared",
+      "original_snippets": "The `getContent` callback returns an XML string with a `<menu>` root element:\n```python\ndef GetRecentFilesContent(control):\n    return '''<menu xmlns=\"http://schemas.microsoft.com/office/2009/07/customui\">...",
+      "relevant_when": "When implementing the Python callback for a dynamicMenu",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "Set loadImage=\"pyxll.load_image\" on the customUI root element to handle PNG images with correct transparency; package resources use image=\"module:resource_name\" format",
+      "original_snippets": "Custom images with PyXLL: Set `loadImage=\"pyxll.load_image\"` on the `customUI` root element, then use `image=\"filename.png\"` on controls. `pyxll.load_image` handles PNG transparency correctly. For package resources use `image=\"module:resource_name\"`.",
+      "relevant_when": "When adding custom image icons to ribbon controls, especially PNG files with transparency",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "The onLoad callback on customUI receives an IRibbonUI object (not IRibbonControl); store it to later call Invalidate() or InvalidateControl()",
+      "original_snippets": "The `onLoad` callback on `customUI` is the exception — it receives an `IRibbonUI` object (not `IRibbonControl`). Store it to invalidate control state.",
+      "relevant_when": "When writing an onLoad handler for the customUI root, or when any callback needs to refresh the ribbon state",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "toggleButton and checkBox onAction callbacks receive (control, pressed) — two parameters, not one",
+      "original_snippets": "toggleButton, checkBox:\ndef on_toggle(control, pressed):   # pressed is True/False",
+      "relevant_when": "When implementing the Python callback for a toggleButton or checkBox onAction",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "dropDown and gallery onAction callbacks receive (control, selectedId, selectedIndex) — three parameters",
+      "original_snippets": "dropDown, gallery (when item selected):\ndef on_select(control, selectedId, selectedIndex):",
+      "relevant_when": "When implementing the Python callback for a dropDown or gallery onAction",
+      "why_given": "new knowledge"
+    },
+    {
+      "instruction": "editBox, comboBox, dropDown, box, buttonGroup, and labelControl are NOT allowed in context menus",
+      "original_snippets": "Controls available per location... editBox: Ribbon group ✓, Menu —, Context menu —... comboBox: Ribbon group ✓, Menu —, Context menu —... dropDown: Ribbon group ✓, Menu —, Context menu —...",
+      "relevant_when": "When adding controls to a context menu",
+      "why_given": "new knowledge"
     }
   ]
 }

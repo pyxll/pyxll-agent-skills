@@ -1,0 +1,36 @@
+{
+  "context": "Tests whether the agent uses the correct callback signatures for different control types (button: 1 arg; toggleButton: 2 args; dropDown: 3 args), stores the IRibbonUI object from onLoad, and calls Invalidate/InvalidateControl to refresh controls.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "button onAction signature",
+      "description": "The Refresh Now button's onAction callback function has exactly 1 parameter (the control)",
+      "max_score": 15
+    },
+    {
+      "name": "toggleButton onAction signature",
+      "description": "The toggle button's onAction callback function has exactly 2 parameters (the control and a boolean pressed state)",
+      "max_score": 20
+    },
+    {
+      "name": "dropDown onAction signature",
+      "description": "The data provider dropdown's onAction callback function has exactly 3 parameters (the control, selectedId string, and selectedIndex integer)",
+      "max_score": 20
+    },
+    {
+      "name": "IRibbonUI stored from onLoad",
+      "description": "The onLoad callback on the customUI element stores the received IRibbonUI argument in a module-level variable (so it can be used by other functions)",
+      "max_score": 15
+    },
+    {
+      "name": "Invalidate called after provider change",
+      "description": "The dropdown's onAction callback (or a function it calls) invokes Invalidate() or InvalidateControl() on the stored IRibbonUI object",
+      "max_score": 15
+    },
+    {
+      "name": "module.function callbacks",
+      "description": "All callback attribute values in portfolio_ribbon.xml use module.function format (contain a dot with portfolio_ribbon as the module name)",
+      "max_score": 15
+    }
+  ]
+}
